@@ -1,0 +1,33 @@
+We assume you know how to open up your terminal: 
+
+(1) your very first step (or if you mess up or if you can't find the foler)
+
+Assuming that you do not have a folder called "550400.git" in your computer,
+you can type in your command line:
+
+cd ~/
+git clone http://cis.jhu.edu/~nhlee/550400.git
+
+this creates a folder in your computer that is called 
+"550400.git" and populates afresh with the contents of 
+the course folder.
+
+(2) incremental update step
+
+Asssuming that you did not mesh up your git folder by,
+for example, deleting or modifying things, do:
+
+cd ~/550400.git
+git reset --hard HEAD
+git pull origin master
+
+(3) do & don'ts 
+
+Use the course folder as if it is a bag of precious templates or references. 
+In particular, I would like to discourage (but necessarily forbid) you 
+from deleting, editing, adding things in the course folder and from 
+changing the coures folder name. 
+
+Keep the folder relatively "clean", and copy things from it to another folder.
+Particularly, be very careful with dragging things from the course folder to 
+another folder. In some computer, drag-and-drop means cut-and-place. 
