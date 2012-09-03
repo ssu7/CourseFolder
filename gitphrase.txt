@@ -2,7 +2,7 @@ We assume you know how to open up your terminal:
 
 (1) your very first step (or if you mess up or if you can't find the folder)
 
-Assuming that you not have a folder called "550400.git" in your computer,
+Assuming that you do not have a folder called "550400.git" in your computer,
 you can type in your command line:
 
 cd ~/
