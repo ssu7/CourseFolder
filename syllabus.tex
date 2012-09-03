@@ -1,0 +1,238 @@
+\documentclass[12pt]{article}
+\usepackage{termcal}
+\usepackage[colorlinks=true,pagebackref,linkcolor=blue]{hyperref}
+\textwidth=7in
+\textheight=9.5in
+\topmargin=-1in
+\headheight=0in
+\headsep=.5in
+\hoffset  -.85in
+
+\pagestyle{empty}
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+
+\newcommand{\MWClass}{%
+\calday[Monday]{\classday} % Monday
+\skipday % Tuesday (no class)
+\calday[Wednesday]{\classday} % Wednesday
+\skipday % Thursday (no class)
+\calday[Friday]{}
+\skipday\skipday 
+}
+
+\newcommand{\TRClass}{%
+\skipday % Monday (no class)
+\calday[Tuesday]{\classday} % Tuesday
+\skipday % Wednesday (no class)
+\calday[Thursday]{\classday} % Thursday
+\skipday % Friday 
+\skipday\skipday % weekend (no class)
+}
+
+\newcommand{\Holiday}[2]{%
+\options{#1}{\noclassday}
+\caltext{#1}{#2}
+}
+
+
+\begin{document}
+
+
+
+\begin{center}
+{\bf AMS 550.400 \quad MW 3:00 - 4:15 PM \quad  Room: Hodson 211}
+\end{center}
+
+\setlength{\unitlength}{1in}
+
+\begin{picture}(6,.1) 
+\put(0,0) {\line(1,0){6.25}}         
+\end{picture}
+
+ 
+
+\renewcommand{\arraystretch}{2}
+
+\vskip.25in
+\noindent\textbf{Instructor:} Dr. N.~H.~Lee (nhlee@jhu.edu) 
+\vskip.25in
+\noindent\textbf{Office Hours:} To Be Arranged 
+
+\vskip.25in
+\noindent\textbf{Course Webpage:} Blackboard will be utilized.  Access it
+through the JHU portal:
+\begin{center}
+    \url{http://my.jhu.edu}
+\end{center} 
+\vskip.25in
+\noindent\textbf{Required Textbook:}  
+Either an \emph{electronic} or a \emph{physical} copy is required for each of the following books:
+\begin{itemize}
+    \item E.\ A.\ Bender, \it An Introduction to Mathematical Modeling, \rm 
+    \item J.\ E.\ Miller, \it The Chicago Guide to Writing about Multivariate Analysis. \rm
+\end{itemize}
+%The following book is also recommended for reference:
+%\begin{itemize}
+%    \item M.\ Kutner, C.\ Nachstsheim, J.\ Neter and W.\ Li, \it Applied Linear Statistical Models.
+%\end{itemize}
+\vskip.25in
+\noindent\textbf{Prerequisites:} %\footnotemark
+Students are expected to have some exposure to:
+\begin{itemize}
+    \item Probability and Statistics (550.310/550.311 or equivalent),
+    \item Multivariate Calculus (110.202 or equivalent).
+\end{itemize}
+%\footnotetext{Footnote text goes here.}
+
+\vspace*{.15in}
+
+\noindent\textbf{Grade Policy:} 
+I expect interest and enthusiasm from the students in this class.  
+The class participation is 30\%, which includes homework assignments, 
+often for class discussion and your resume. The course project is 70\%, which 
+further breaks down as follows:  
+a work statement (10\%), 
+a midterm presentation (10\%), 
+a progress report (10\%),
+a final presentation (20\%) 
+and a final report (20\%).  
+The project must be approved by the instructor prior to your start of writing
+your work statement. 
+The final presentation slides and the final report are to be typed in \LaTeX\
+using the course templates.  The templates are distributed in class.
+The final presentation can be delivered in class if you prefer,
+but it is also allowed to be delivered by a video-recording as long as you
+have the necessary means to do so. 
+
+\vskip.25in
+\noindent \textbf{Course Objectives}: 
+This course has three objectives: 
+\begin{itemize}
+    \item To gain experience in mathematical modeling,
+    \item To gain experience in presenting technical results,
+    \item To be aware of effective technical typesetting tools.
+\end{itemize}
+For illustration of principles of mathematical modeling, 
+anecdotes of successful mathematical models are discussed.  
+
+To facilitate developing a proper style for presenting technical 
+results, adopted is a particular style of writing useful for 
+summarizing a statistical analysis for multivariate data.
+   
+For effective typesetting tools, tutorials for Vim, \LaTeX, 
+Beamer, PGF/TikZ, R and Git may be given and for enhanced learning
+experience, these tools may be used throughout the class.
+
+\vspace*{.15in}
+\noindent\textbf{Equipment:}
+You will need a computer with \LaTeX\ and R installed. 
+If you have a laptop, you should install the most recent version of R  and
+\LaTeX\ on it. 
+This will be explained. If you do not have your own laptop, R and \LaTeX\ 
+may be available in the Krieger labs and on computers in the AMS Computing Lab
+(on which AMS masters' students have priority).
+
+\vskip.25in
+\noindent\textbf{Academic Honesty}:  
+The strength of the university depends on academic and personal integrity. In
+this course, you must be honest and truthful. Ethical violations include
+cheating on exams, plagiarism, reuse of assignments, improper use of the
+Internet and electronic devices, unauthorized collaboration, alteration of
+graded assignments, forgery and falsification, lying, facilitating academic
+dishonesty, and unfair competition.
+
+In this course, students are permitted and indeed encouraged to discuss
+homework problems with one another, but it is expected that the writing up of
+answers will be done privately. Copying by one student of another's homework
+solutions is considered an ethics violation in this course. Discussion of
+lecture material is strongly encouraged.
+
+Report any violations you witness to the instructor. You may consult the
+associate dean of students and/or the chairman of the Ethics Board beforehand.
+See the guide on ``Academic Ethics for Undergraduates'' the Ethics Board web
+site for more information:
+\begin{center}
+\url{http://ethics.jhu.edu} 
+\end{center}
+
+\vskip.25in
+\noindent\textbf{University Attendance Policy}:  
+Students are expected to attend classes regularly. A student who incurs an excessive
+number of absences may be withdrawn from a class at the discretion of the
+professor:
+\begin{center}
+\url{http://www.jhu.edu/design/oliver/academic_manual/illness.html}
+\end{center}
+
+\vskip.25in
+\noindent\textbf{Important Dates}:
+\begin{center} \begin{minipage}{5in} \begin{flushleft} Last day to add \dotfill Fri, Sep 14\\
+    Last day to drop \dotfill Sun, Oct 14\\
+    Fall Break Day \dotfill Mon, Oct 15\\
+    Classes meet according to Monday Schedule\dotfill Tue, Oct 16\\
+    Last day to withdraw \dotfill Fri, Oct 26\\
+    Thanksgiving vacation\dotfill Wed, Nov 21 -- Sun, Nov 25\\
+    Reading period\dotfill Sat, Dec 8 -- Tue, Dec 11\\
+\end{flushleft}
+\end{minipage}
+\end{center}
+
+\newpage
+
+\paragraph*{Tentative Schedule:}
+\hoffset  0in
+\begin{center}
+\begin{calendar}{09/03/2012}{14} 
+    \centering
+\setlength{\calboxdepth}{.3in}
+\MWClass
+% schedule
+\Holiday{9/3/2012}{\emph{Labor Day}}
+\Holiday{9/14/2012}{\emph{Due: Resume}}
+\Holiday{9/28/2012}{\emph{Due: Work Statement}}
+\Holiday{10/15/2012}{\emph{N.B. Fall Break} \\ Choosing Effective Examples and Analogies}    
+\Holiday{10/19/2012}{\emph{Due: Midterm Presentation}}
+\Holiday{11/2/2012}{\emph{Due: Progress Report}}
+\Holiday{11/21/2012}{\emph{Thanksgiving Break Begins}}
+\Holiday{11/16/2012}{\emph{Due: Final Presentation}}
+\Holiday{12/7/2012}{\emph{Due: Final Report}}
+\caltexton{1}{Overview}
+%\caltextnext{Insurance Redlining}    
+%\caltextnext{Insurance Redlining}    
+\caltextnext{Seven Basic Principles}
+\caltextnext{Seven Basic Principles}
+\caltextnext{Causality, Statistical Significance, and Substantive Significance}
+\caltextnext{Causality, Statistical Significance, and Substantive Significance}
+\caltextnext{Five More Technical Principles}
+\caltextnext{Five More Technical Principles}
+\caltextnext{Creating Effective Table} 
+\caltextnext{Creating Effective Table}  
+\caltextnext{Creating Effective Chart}  
+\caltextnext{Creating Effective Chart} 
+%\caltextnext{Basic Optimization\quad (N.B.\ \emph{Fall Break, i.e., no class on Monday, but we meet instead
+%on Tuesday, Oct 16 from 3.00pm to 4.15pm})} 
+%\caltextnext{Argument From Scale}    
+\caltextnext{Choosing Effective Examples and Analogies}      
+\caltextnext{Basic Types of Quantitative Comparisons}       
+\caltextnext{Basic Types of Quantitative Comparisons}       
+\caltextnext{Quantitative Comparisons for Multivariate Models} 
+\caltextnext{Quantitative Comparisons for Multivariate Models} 
+\caltextnext{Choosing How to Present Statistical Test Results}
+\caltextnext{Choosing How to Present Statistical Test Results}
+\caltextnext{Arguments from Scale}     
+\caltextnext{Arguments from Scale}     
+\caltextnext{Graphical Methods}      
+\caltexton{22}{Graphical Methods}     
+\caltextnext{Basic Optimization}   
+\caltextnext{Basic Optimization}   
+\caltextnext{Basic Optimization}   
+% ... and so on
+\end{calendar}
+\end{center}
+\end{document}
+
+\caltextnext
+
+\caltextnext{Writing about Multivariate Models}
