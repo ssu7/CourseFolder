@@ -5,3 +5,5 @@
 *.nav
 *.snm
 *.toc
+*.swp
+*.nfs*

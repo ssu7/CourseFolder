@@ -1,33 +1,84 @@
-We assume you know how to open up your terminal: 
+\documentclass[12pt]{article}
+\usepackage[colorlinks=true,pagebackref,linkcolor=blue]{hyperref}
+\usepackage{listings}
+\usepackage{courier}
+\lstset{
+basicstyle=\footnotesize\ttfamily,
+%numbers=left,
+frame=bottomline,
+framextopmargin=50pt,
+}
 
-(1) your very first step (or if you mess up or if you can't find the folder)
+\textwidth=7in
+\textheight=9.5in
+\topmargin=-1in
+\headheight=0in
+\headsep=.5in
+\hoffset  -.85in
 
-Assuming that you do not have a folder called "550400.git" in your computer,
+\pagestyle{empty}
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+
+\begin{document}
+
+\begin{center}
+{\bf AMS 550.400 \quad MW 3:00 - 4:15 PM \quad  Room: Hodson 211}
+\end{center}
+
+While you may also do the same things with a GUI version of Git, 
+here, we assume you will be using your terminal: 
+
+\paragraph{Your very first step (or if you mess up or if you can't find
+the folder)}
+
+Assuming that you do not have a folder called ``550400.git" in your computer,
 you can type in your command line:
 
+\begin{lstlisting}
 cd ~/
 git clone http://cis.jhu.edu/~nhlee/550400.git
-
-this creates a folder in your computer that is called 
-"550400.git" and populates afresh with the contents of 
+\end{lstlisting}
+This creates a folder in your computer that is called 
+``550400.git" and populates it afresh with the contents of 
 the course folder.
 
-(2) incremental update step
+\paragraph{Incremental update step}
 
-Assuming that you did not mesh up your git folder by,
+Assuming that you did not mess up your git folder by,
 for example, deleting or modifying things, do:
 
+\begin{lstlisting}
 cd ~/550400.git
 git reset --hard HEAD
 git pull origin master
+\end{lstlisting}
+This fetches new materials from the course git folder and 
+merge them into your current git folder. 
 
-(3) Do & Don't 
+\paragraph{Do \& Don't}
 
 Use the course folder as if it is a bag of precious templates or references. 
-In particular, I would like to discourage (but necessarily forbid) you 
+In particular, unless you are comfortable with Git,
+I would like to discourage (but not necessarily forbid) you 
 from deleting, editing, adding things in the course folder and from 
 changing the course folder name. 
 
-Keep the folder relatively "clean", and copy things from it to another folder.
-Particularly, be very careful with dragging things from the course folder to 
-another folder. In some computer, drag-and-drop means cut-and-place. 
+Keep the folder relatively ``clean", and copy things from it to another folder.
+Particularly, be very careful when dragging things from the course folder to 
+another folder in your computer. 
+In some computer, drag-and-drop means, in effect, cut-and-paste. 
+
+\paragraph{Alternative} 
+
+If you rather use the usual but inefficient routine to update your course
+folder, feel free to visit: 
+\begin{center}
+    \url{http://cis.jhu.edu/~nhlee/550400.html/}
+\end{center}
+However, this alternative is not supported officially.  In particular, 
+be warned that this html folder may contain files that you do not need to care
+and sometimes, it may even contain a non-official version. In other words, use it at
+your own risk. 
+\end{document}
