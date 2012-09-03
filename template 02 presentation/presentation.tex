@@ -1,0 +1,140 @@
+\documentclass[compress,handout,10pt]{beamer}
+
+\newlength{\wideitemsep}
+\setlength{\wideitemsep}{\itemsep}
+\addtolength{\wideitemsep}{100pt}
+\let\olditem\item
+\renewcommand{\item}{\setlength{\itemsep}{0.5\baselineskip}\olditem}
+
+\usetheme{Singapore}
+\usecolortheme{lily}
+\usefonttheme[onlymath]{serif}
+
+\usepackage{float}
+\floatstyle{boxed}
+\usepackage{colortbl}
+\usepackage{mathpazo}
+\usepackage{graphicx}
+\usepackage{movie15}
+\usepackage{bm}
+\usepackage{verbatim}
+\usepackage{comment}
+\usepackage{caption}
+\usepackage{subcaption}
+\captionsetup[subfigure]{labelformat=empty}
+\captionsetup[figure]{labelformat=empty}
+
+\newcommand{\mygreen}{\color{green!50!black}}
+\newcommand{\myblue}{\color{blue}}
+\newcommand{\myred}{\color{red}}
+\newcommand{\mycolor}{\color{red}{c}\color{blue}{o}\color{green}{l}\color{orange}{o}\color{cyan}{r}}
+\newcommand{\mysize}{\scriptsize{s}\small{i}\normalsize{z}\Large{e}}
+\newcommand{\myshape}{\textcircled{s}\textit{h}\texttt{a}\textsf{p}\textsc{e}}
+
+\xdefinecolor{titlecolor}{rgb}{.855,.647,.125}
+\setbeamercolor{frametitle}{fg=titlecolor}
+\setbeamerfont{frametitle}{series=\bfseries}
+\setbeamercolor{normal text in math text}{parent=math text}
+
+\setbeamertemplate{navigation symbols}{} %gets rid of navigation symbols
+\setbeamertemplate{footline}[frame number]
+\beamertemplateshadingbackground{blue!5}{yellow!10}
+
+\title{{\color{blue} \LARGE 550.400: Mathematical Modeling and Consulting\newline} }
+
+\subtitle{{\color{red} \large Lecture Notes} }
+
+\author{ 
+%    \vspace{5pt}
+    {\bf{Instructor:}} \\ 
+Dr.~N.~H.~Lee \\ 
+    \vspace{5pt}
+} 
+\institute{JHU AMS 2012 FALL}
+
+\date{\mygreen Last Complied on \today} 
+
+\begin{document}
+
+\begin{frame}[plain]
+    \titlepage
+\end{frame}
+
+\begin{frame}
+    \frametitle{Outline}
+    \tableofcontents
+\end{frame}
+
+\section{Preliminaries}
+
+\begin{frame}
+    \frametitle{Example: Insurance Redlining}
+    Frequently Recurring Elements of doing a Project in Industry:
+    \vspace{7pt}
+             \begin{enumerate}
+                 \item Work Statement
+                 \item Midterm Presentation
+                 \item Progress Report
+                 \item Final Presentation
+                 \item Final Report
+             \end{enumerate}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Programmings in this class}
+    \begin{enumerate}
+        \item \LaTeX: 
+            \begin{enumerate}
+                \item \texttt{moderncv}
+                \item \texttt{beamer}
+                \item \texttt{article}
+                \item \texttt{tikz}
+            \end{enumerate}
+        \item R:
+            \begin{enumerate}
+                \item \texttt{tikzDevice}
+                \item \texttt{lm}
+            \end{enumerate}
+        \item Git
+            \begin{enumerate}
+                \item \texttt{git init .}
+            \end{enumerate}
+    \end{enumerate}
+\end{frame}
+
+\section{Principles}
+\begin{frame}
+    \frametitle{Seven Basic Principles}
+     \begin{enumerate}
+         \item Set the context 
+         \item Choose effective examples and analogies
+         \item Choose vocabulary to suit your readers
+         \item Decide whether to present \#s in text, tables, or figures
+         \item Report and interpret \#s in the text
+         \item Specify the direction \emph{and} size of an association between variables
+         \item For many \#s, summarize overall pattern 
+     \end{enumerate}
+\end{frame}
+
+\section{Tools}
+\begin{frame}
+    \frametitle{Creating Effective Tables}
+\end{frame}
+
+\section{Arguments from Scale}
+
+\begin{frame}
+    \frametitle{Example: Cost of Packaging}
+\end{frame}
+
+\section{Graphical Methods}
+\begin{frame}
+    \frametitle{Example: The Nuclear Mission Arms Race}
+\end{frame}
+
+\section{Basic Optimization}
+\begin{frame}
+    \frametitle{Example: Maintaining Inventory}
+\end{frame}
+
+\end{document}

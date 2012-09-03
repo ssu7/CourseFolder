@@ -1,0 +1,216 @@
+\documentclass[oneside,12pt]{report}  
+
+% the dimensions of the page
+\textheight=9.25in \topmargin=-0.5in   %See note in Chapter 8 of Sample Report about "Page scaling" option in Adobe
+\textwidth=6.0in
+\oddsidemargin=0.3in
+\evensidemargin=0.3in  % Needed to balance even and odd pages in twoside print copy
+
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{graphicx, subfigure}
+\usepackage{caption}
+\usepackage{excludeonly}
+
+\usepackage{graphicx} 
+
+%\usepackage{doc}
+%% Following sets up logic and formatting for conditional twoside copying
+%\usepackage{ifthen, color, fancyvrb}
+%\usepackage{nextpage}\pagestyle{plain}
+%\newcommand\myclearpage{\cleartooddpage
+%  [\thispagestyle{empty}]
+%  }
+
+\DeclareMathOperator*{\argmin}{arg\ min}
+\DeclareMathOperator*{\sign}{sign}
+
+% Note special alternative codes for using TWO bibliographies; see cautionary note in
+\DeclareGraphicsExtensions{ps,eps,PNG,png}
+
+% Theorem-like command definitions:
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}{Lemma}[chapter]
+\newtheorem{definition}{Definition}  % Note, this italicizes everything
+
+% Print the chapter and sections in the toc
+\setcounter{tocdepth}{1}
+
+% Specify which files to typeset for this run (note that overall pagination is preserved)
+%\includeonly{chapter1, chapter2}
+% Specify which files NOT to typeset for this run (note that overall pagination is preserved)
+%\excludeonly{}
+
+% Groundwork for allowing double-sided copying with blank versos
+\def\prefacesection#1{
+\chapter*{#1}
+\addcontentsline{toc}{chapter}{#1}
+}
+
+\begin{document}
+
+
+\def\thefootnote{\fnsymbol{footnote}}
+
+\thispagestyle{empty}
+
+% The numbers below controls the amount of space between the following sections
+\def\shiftdowna{0.32in}  % Adjust for balance
+\def\shiftdownb{0.22in}  % Adjust for balance
+
+% Set up the boiler plate at the top of the page
+
+\begin{center}
+\textbf{{\large Mathematical Modeling and Consulting Final Report}}\\
+
+\vspace \shiftdowna
+\includegraphics[width=0.5\textwidth]{jhu.png}\\
+
+% Home Department
+\vspace \shiftdowna
+\underline {Your Home Department}\\ 
+\vspace{5pt}
+\textbf{{\large Applied Mathematics and Statistics}} \\
+
+% TITLE
+\vspace \shiftdowna
+\textbf{{\Large Insurance Redlining}}
+
+% STUDENTS
+\vspace{0.35in}
+\underline {Team Members}\\
+\vspace{5pt}
+John Doe (Project Manager), \texttt{john.doe@jhu.edu} \\
+\vspace{10pt}
+Jane Doe (Report Coordinator), \texttt{jane.doe@jhu.edu}\\
+
+% INSTRUCTOR
+\vspace \shiftdownb
+\underline {Academic Mentor} \\
+\vspace{5pt}
+\text{Dr.~N.~.H.~Lee}, \texttt{nhlee@jhu.edu}
+
+% DATE
+\vspace \shiftdowna
+Date: Last Complied on \today
+
+\end{center}
+
+\vfill  %Fill page to force following note to bottom
+\footnoterule
+\noindent \small{This project was supported by XYZ.}
+
+% Begin ABSTRACT
+\ifthenelse{\boolean{@twoside}}{\myclearpage}{}
+\prefacesection{Abstract}
+
+% Begin ACKNOWLEDGMENTS
+\ifthenelse{\boolean{@twoside}}{\myclearpage}{}
+\prefacesection{Acknowledgments}
+
+% Table of contents, List of Figures, and List of Tables.
+\ifthenelse{\boolean{@twoside}}{\myclearpage}{}
+\tableofcontents
+
+\ifthenelse{\boolean{@twoside}}{\myclearpage}{}
+\listoffigures
+
+\ifthenelse{\boolean{@twoside}}{\myclearpage}{}
+\listoftables
+
+
+\renewcommand{\thefootnote}{\arabic{footnote}}
+\setcounter{footnote}{0}
+
+\ifthenelse{\boolean{@twoside}}{\myclearpage}{}
+%\include{A_Introduction}
+%\include{B_TechnicalBackground}
+%\include{C_ProblemStatement}
+%\include{D_Analysis}
+%\include{E_Results}
+%\include{F_Conclusion}
+
+\appendix
+\ifthenelse{\boolean{@twoside}}{\myclearpage}{}
+
+\chapter{Lemmas}\label{Lemma}
+
+\chapter{Glossary}\label{Glossary}
+
+\vspace{12pt} 
+
+\vspace{8pt}
+\noindent {\bf Ascending node}. The point where the satellite crosses through
+the equatorial plane in a northerly direction. 
+
+\vspace{8pt}
+\noindent {\bf Earth-centered inertial frame}. A frame of reference whose origin is the center of the earth and which does not rotate with respect to inertial space.
+
+\vspace{8pt}
+\noindent {\bf Earth-centered rotating frame}. A frame of reference whose origin is the center of the earth but which rotates with the earth. 
+
+\vspace{8pt} \noindent {\bf Footprint}. The intersection of a visibility cone with the surface of the earth.
+
+\vspace{8pt} \noindent {\bf Great circle of arc}. The shortest path between two points on the surface of the earth. 
+
+\vspace{8pt} \noindent {\bf Groundtrack}.The location of the center of a visibility cone footprint on the surface of the earth.
+
+\vspace{8pt}
+\noindent {\bf Inclination}.  The angle between the normal to the orbit plane
+and the normal to the equatorial plane.
+
+\vspace{8pt} \noindent {\bf LEO}. An orbit with an altitude approximately below 2,000 km.
+
+\vspace{8pt} \noindent {\bf Molniya orbit}. A highly elliptical orbit with an orbital period of half a day.
+
+\vspace{8pt} \noindent {\bf Projection distance}. The distance between the center of the visibility cone footprint and a point of interest projected onto the plane orthogonal to the vector defining the visibility cone center and tangent to the earth surface.
+
+\vspace{8pt}
+\noindent {\bf Right ascension of the ascending node}. The angle
+between the unit vector $\bm{X}$ and the point where the satellite crosses the
+ascending node, measured counterclockwise when viewed from the north side of
+the equatorial plane.
+
+
+\ifthenelse{\boolean{@twoside}}{\myclearpage}{}
+\chapter{Abbreviations}\label{Abbreviations}
+
+
+\noindent ECI.  Earth-centered inertial frame
+
+\vspace{5pt}
+
+\noindent ECR.  Earth-centered rotating frame
+
+\vspace{5pt}
+
+\noindent LEO.  Low Earth Orbit  
+
+\vspace{5pt}
+
+\noindent RAAN. Right ascension of the ascending node
+
+\vspace{5pt}
+
+%\endinput
+
+% Add your bibliography to Contents
+\ifthenelse{\boolean{@twoside}}{\myclearpage}{\newpage}
+\addtocontents {toc}{\protect \contentsline {chapter}{REFERENCES}{}}
+\addcontentsline{toc}{chapter}{Selected Bibliography Including Cited Works}  
+
+% Bibliography must come last.
+\bibliographystyle{plain}
+\renewcommand\bibname{Selected Bibliography Including Cited Works}
+\nocite{*}  % List ALL references in your references, not just the ones cited in the text.
+% This scheme automatically alphabetizes the Bibliography.
+\bibliography{Biblio}
+
+\end{document}
