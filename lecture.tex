@@ -7,6 +7,9 @@
 \let\olditem\item
 \renewcommand{\item}{\setlength{\itemsep}{0.5\baselineskip}\olditem}
 
+
+\def\LaTeXs{\LaTeX\ }
+
 %\usepackage{tikz}
 %\usepackage{pgfplots}
 
@@ -74,7 +77,7 @@ framextopmargin=50pt,
 %\usepackage[OT2,T1]{fontenc}
 %\usepackage{pgf,pgfarrows,pgfautomata,pgfheaps,pgfnodes,pgfshade}
 %\usepackage{animate}
-\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+%\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
 \graphicspath{{./images/}}
 %\renewcommand{\thesubfigure}{}
 
@@ -112,19 +115,11 @@ framextopmargin=50pt,
 \subtitle{{\color{red} \large Lecture Notes} }
 
 \author{ 
-%{
-%    \bf{UCLA RIPS 2012 Team:}} \\
-%Lisa Plucinski \and  Jason Xu \\
-%Iain Carmichael \and Louis Bohorquez \\
-%    \vspace{5pt}
     {\bf{Instructor:}} \\ 
 Dr.~N.~H.~Lee \\ 
     \vspace{5pt}
-%    {\bf{Aerospace Mentors:}} \\
-%Steve Hast \and Jim Gidney \and Gary Green \\ Greg Henning\and Ragini Joshi\and Tom Lang 
 } 
 \institute{JHU AMS 2012 FALL}
-
 
 
 %\date{\mygreen \today} % \\ Sparks, Nevada}
@@ -145,15 +140,14 @@ Dr.~N.~H.~Lee \\
 \section{Preliminaries}
 
 
-
 \begin{frame}
     \frametitle{Programmings in this class}
     \begin{itemize}
-        \item \LaTeX: 
+        \item \LaTeXs: 
             \begin{itemize}
                 \item \texttt{moderncv}
                 \item \texttt{beamer}
-                \item \texttt{article}
+                \item \texttt{report}
                 \item \texttt{tikz}
             \end{itemize}
         \item R:
@@ -167,6 +161,52 @@ Dr.~N.~H.~Lee \\
             \end{itemize}
     \end{itemize}
 \end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Tutorial: \LaTeXs}
+    \LaTeXs is a computer lanuage for writing a scholarly paper:
+    \begin{table}
+        \centering
+        \begin{tabular}{c|p{3cm}|p{3cm}}
+            \quad   &   HTML    & \LaTeXs \\ 
+            \hline
+            Code    & 
+            \begin{lstlisting}
+<html> 
+ . . .
+</html>
+            \end{lstlisting} &  
+            \begin{lstlisting}
+\begin{document}
+ . . .
+\end{document}
+            \end{lstlisting}\\
+            \hline
+            Complier & Firefox and etc. & pdflatex and etc. \\
+            \hline
+            Output  & Webpage & PDF file
+        \end{tabular}
+        \caption{HTML vs \LaTeXs}
+        \label{tab:htmlvslatex}
+    \end{table}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Tutorial: \LaTeXs}
+    \begin{itemize}
+        \item Demo on preparing a resume using \LaTeXs \texttt{moderncv} package:
+            \begin{itemize}
+                \item Install \LaTeXs (MikTex in Windows and MacTex in OSX),
+                \item Download \texttt{moderncv} package files from the course folder,
+                \item Change file names to reflect you,
+                \item Edit the tex file,
+                \item Compile using your favorite \LaTeXs editor,
+                \item Look at the resulting PDF file.
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+
 
 \begin{frame}[fragile]
     \frametitle{Tutorial: Git}
