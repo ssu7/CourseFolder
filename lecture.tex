@@ -55,6 +55,8 @@ framextopmargin=50pt,
 }
 
 
+\usepackage{amsmath,amsthm,amssymb}
+
 
 
 \usepackage{float}
@@ -139,21 +141,135 @@ Dr.~N.~H.~Lee \\
 
 \section{Preliminaries}
 
+\begin{frame}
+    \frametitle{Syllabus}
+    \begin{itemize}
+        \item Grade Policy
+        \item Attendance
+        \item \emph{Tentative} Schedule
+        \item Blackboard
+        \item Misc.
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{What is Mathematical Modeling?}
+    \begin{figure}
+            \centering
+            \includegraphics[width=0.4\textwidth]{Moneyballs.jpg}
+            \caption{Money Ball}
+            \label{fig:MondayBall}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{What is Mathematical Modeling?}
+    \begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{TrillionDollarBet.png}
+        \caption{Trillion Dollar Bet}
+                \label{fig:LTCM}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{What is Mathematical Modeling?}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.6\textwidth]{LAPDUCLA.png}
+        \caption{
+        \href{http://losangeles.cbslocal.com/video?autoStart=true&topVideoCatNo=default&clipId=6724212}{LAPD Fighting Crime with Math}}
+                \label{fig:LAPDUCLA}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{What is Mathematical Modeling?}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.8\textwidth]{redliningPhilly.jpg}
+        \caption{Insurance Redlining}
+                \label{fig:redlining}
+    \end{figure}
+\end{frame}
+
+\newtheorem{DEFinsredlining}{Insurance Redlining}
+\newtheorem{DEFfairplan}{FAIR}
+\begin{frame}
+    \frametitle{Example: Insurance Redlining}
+    \begin{DEFinsredlining}
+        \textcolor{red}{Insurance redlining} refers to the practice of refusing
+        to issue insurance to certain types of people or within some 
+        geographic area. 
+    \end{DEFinsredlining}
+\vskip.5in
+    \begin{DEFfairplan}
+        The \textcolor{red}{FAIR} plan was offered by the city of Chicago as a 
+        default policy to homeowner who had been rejected by the voluntary
+        market. 
+    \end{DEFfairplan}
+\end{frame}
+
+\newtheorem{DEFsponsorUSCCR}{Sponsor}
+\newtheorem{DEFdataFAIR}{Data}
+\begin{frame}
+    \frametitle{Example: Insurance Redlining}
+    \begin{DEFsponsorUSCCR} 
+        The \textcolor{red}{U.S.~Commission on Civil Rights} examined 
+        charges by several Chicago community organizations that insurance 
+        companies were redlining their neighborhoods. 
+    \end{DEFsponsorUSCCR}
+    \vskip.5in
+    \begin{DEFdataFAIR}
+        The \textcolor{red}{number of FAIR plan policies} written and renewed in Chicago
+        by zip code for the number of months of December 1977 through May
+        1978.
+    \end{DEFdataFAIR}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Example: Insurance Redlining}
+    Variables to consider:
+    \begin{description}
+        \item[\texttt{race}] Racial composition in percentage of minority,
+        \item[\texttt{fire}] Fire per 100 housing units,
+        \item[\texttt{theft}] Theft per 100 housing units,
+        \item[\texttt{age}] Theft per 1000 population,
+        \item[\texttt{involact}] New FAIR plan policies and renewal per 100 housing units,
+        \item[\texttt{income}] Median family income in thousands of dollars,
+        \item[\texttt{side}] North or South side of Chicago.
+    \end{description}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Example: Insurance Redlining}
+    Frequently Recurring Elements of doing a Project in Industry:
+    \vspace{7pt}
+             \begin{enumerate}
+                 \item Work Statement,
+                 \item Midterm Presentation,
+                 \item Progress Report,
+                 \item Final Presentation,
+                 \item Final Report.
+             \end{enumerate}
+\end{frame}
+
 
 \begin{frame}
     \frametitle{Programmings in this class}
     \begin{itemize}
+        \item R:
+            \begin{itemize}
+                \item \texttt{tikzDevice}
+                \item \texttt{lm}
+            \end{itemize}
         \item \LaTeXs: 
             \begin{itemize}
                 \item \texttt{moderncv}
                 \item \texttt{beamer}
                 \item \texttt{report}
                 \item \texttt{tikz}
-            \end{itemize}
-        \item R:
-            \begin{itemize}
-                \item \texttt{tikzDevice}
-                \item \texttt{lm}
             \end{itemize}
         \item Git
             \begin{itemize}
@@ -162,9 +278,10 @@ Dr.~N.~H.~Lee \\
     \end{itemize}
 \end{frame}
 
+
 \begin{frame}[fragile]
     \frametitle{Tutorial: \LaTeXs}
-    \LaTeXs is a computer lanuage for writing a scholarly paper:
+    \LaTeXs is a computer language for writing a scholarly paper:
     \begin{table}
         \centering
         \begin{tabular}{c|p{3cm}|p{3cm}}
@@ -205,6 +322,7 @@ Dr.~N.~H.~Lee \\
             \end{itemize}
     \end{itemize}
 \end{frame}
+
 
 
 
@@ -276,60 +394,7 @@ git pull origin master
     \end{itemize}
 \end{frame}
 
-\begin{frame}
-    \frametitle{What is Mathematical Modeling?}
-    \begin{figure}
-            \centering
-            \includegraphics[width=0.4\textwidth]{Moneyballs.jpg}
-            \caption{Money Ball}
-            \label{fig:MondayBall}
-    \end{figure}
-\end{frame}
 
-\begin{frame}
-    \frametitle{What is Mathematical Modeling?}
-    \begin{figure}
-        \centering
-        \includegraphics[width=0.6\textwidth]{LAPDUCLA.png}
-        \caption{
-        \href{http://losangeles.cbslocal.com/video?autoStart=true&topVideoCatNo=default&clipId=6724212}{LAPD Fighting Crime with Math}}
-                \label{fig:LAPDUCLA}
-    \end{figure}
-\end{frame}
-
-
-\begin{frame}
-    \frametitle{What is Mathematical Modeling?}
-    \begin{figure}
-        \centering
-        \includegraphics[width=\textwidth]{TrillionDollarBet.png}
-        \caption{Trillion Dollar Bet}
-                \label{fig:LTCM}
-    \end{figure}
-\end{frame}
-
-\begin{frame}
-    \frametitle{What is Mathematical Modeling?}
-    \begin{figure}
-        \centering
-        \includegraphics[width=0.8\textwidth]{redliningPhilly.jpg}
-        \caption{Insurance Redlining}
-                \label{fig:redlining}
-    \end{figure}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Example: Insurance Redlining}
-    Frequently Recurring Elements of doing a Project in Industry:
-    \vspace{7pt}
-             \begin{enumerate}
-                 \item Work Statement
-                 \item Midterm Presentation
-                 \item Progress Report
-                 \item Final Presentation
-                 \item Final Report
-             \end{enumerate}
-\end{frame}
 
 \section{Principles}
 \begin{frame}
