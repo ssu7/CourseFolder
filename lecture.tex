@@ -1,4 +1,4 @@
-\documentclass[compress,handout,10pt]{beamer}
+\documentclass[hyperref={colorlinks=false},compress,handout,10pt]{beamer}
 
 
 \newlength{\wideitemsep}
@@ -43,6 +43,17 @@
 \usefonttheme[onlymath]{serif}
 
 %\usepackage{beamerarticle}
+\usepackage{listings}
+\lstset{
+basicstyle=\footnotesize\ttfamily,
+%numbers=left,
+frame=bottomline,
+framextopmargin=50pt,
+}
+
+
+
+
 \usepackage{float}
 \floatstyle{boxed}
 \usepackage{colortbl}
@@ -64,7 +75,7 @@
 %\usepackage{pgf,pgfarrows,pgfautomata,pgfheaps,pgfnodes,pgfshade}
 %\usepackage{animate}
 \DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
-
+\graphicspath{{./images/}}
 %\renewcommand{\thesubfigure}{}
 
 \newcommand{\mygreen}{\color{green!50!black}}
@@ -133,6 +144,140 @@ Dr.~N.~H.~Lee \\
 
 \section{Preliminaries}
 
+
+
+\begin{frame}
+    \frametitle{Programmings in this class}
+    \begin{itemize}
+        \item \LaTeX: 
+            \begin{itemize}
+                \item \texttt{moderncv}
+                \item \texttt{beamer}
+                \item \texttt{article}
+                \item \texttt{tikz}
+            \end{itemize}
+        \item R:
+            \begin{itemize}
+                \item \texttt{tikzDevice}
+                \item \texttt{lm}
+            \end{itemize}
+        \item Git
+            \begin{itemize}
+                \item \texttt{git gui}
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Tutorial: Git}
+
+\begin{lstlisting}
+sudo apt-get install git
+\end{lstlisting}
+
+\begin{figure}[b]
+    \begin{center}
+        \includegraphics[height=0.6\textheight]{gitguiinstall.png}
+    \end{center}
+    \caption{An alternative: \texttt{git gui}}
+    \label{fig:gitgui}
+\end{figure}
+    
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Tutorial: Git}
+
+\vspace{8pt}
+\begin{lstlisting}
+cd ~/
+git clone http://cis.jhu.edu/~nhlee/550400.git
+\end{lstlisting}
+
+\begin{figure}[b]
+    \begin{center}
+        \includegraphics[height=0.5\textheight]{gitgui.png}
+    \end{center}
+    \caption{An alternative: \texttt{git gui}}
+    \label{fig:gitgui}
+\end{figure}
+    
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Tutorial: Git}
+
+\begin{lstlisting}
+cd ~/550400.git
+git reset --hard HEAD
+git pull origin master
+\end{lstlisting}
+
+\begin{figure}[b]
+    \begin{center}
+        \includegraphics[height=0.65\textheight]{gitguiusing.png}
+    \end{center}
+    \caption{An alternative: \texttt{git gui}}
+    \label{fig:gitgui}
+\end{figure}
+    
+\end{frame}
+
+\begin{frame}
+    \frametitle{Tutorial: Git}
+    \begin{itemize}
+        \item Demo I: build a \emph{personal} Git folder 
+            \begin{itemize}
+                \item Create some files
+                \item Stage the files 
+                \item Commit the files
+            \end{itemize}
+        \item Demo II: build the \emph{course} Git folder
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{What is Mathematical Modeling?}
+    \begin{figure}
+            \centering
+            \includegraphics[width=0.4\textwidth]{Moneyballs.jpg}
+            \caption{Money Ball}
+            \label{fig:MondayBall}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{What is Mathematical Modeling?}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.6\textwidth]{LAPDUCLA.png}
+        \caption{
+        \href{http://losangeles.cbslocal.com/video?autoStart=true&topVideoCatNo=default&clipId=6724212}{LAPD Fighting Crime with Math}}
+                \label{fig:LAPDUCLA}
+    \end{figure}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{What is Mathematical Modeling?}
+    \begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{TrillionDollarBet.png}
+        \caption{Trillion Dollar Bet}
+                \label{fig:LTCM}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{What is Mathematical Modeling?}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.8\textwidth]{redliningPhilly.jpg}
+        \caption{Insurance Redlining}
+                \label{fig:redlining}
+    \end{figure}
+\end{frame}
+
 \begin{frame}
     \frametitle{Example: Insurance Redlining}
     Frequently Recurring Elements of doing a Project in Industry:
@@ -144,29 +289,6 @@ Dr.~N.~H.~Lee \\
                  \item Final Presentation
                  \item Final Report
              \end{enumerate}
-\end{frame}
-
-
-\begin{frame}
-    \frametitle{Programmings in this class}
-    \begin{enumerate}
-        \item \LaTeX: 
-            \begin{enumerate}
-                \item \texttt{moderncv}
-                \item \texttt{beamer}
-                \item \texttt{article}
-                \item \texttt{tikz}
-            \end{enumerate}
-        \item R:
-            \begin{enumerate}
-                \item \texttt{tikzDevice}
-                \item \texttt{lm}
-            \end{enumerate}
-        \item Git
-            \begin{enumerate}
-                \item \texttt{git init .}
-            \end{enumerate}
-    \end{enumerate}
 \end{frame}
 
 \section{Principles}
@@ -182,6 +304,7 @@ Dr.~N.~H.~Lee \\
          \item For many \#s, summarize overall pattern 
      \end{enumerate}
 \end{frame}
+
 
 \section{Tools}
 \begin{frame}

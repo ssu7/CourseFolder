@@ -12,3 +12,7 @@
 *.swp
 *.nfs*
 *.directory
+*.latexmain
+chapter*
+*.brf
+*.vrb

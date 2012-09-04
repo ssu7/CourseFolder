@@ -8,8 +8,10 @@
 
 
 % Useful packages
+\usepackage{dtklogos}
 \usepackage{amsmath}
 \usepackage{bm}
+%\usepackage[colorlinks=true,pagebackref,linkcolor=blue]{hyperref}
 \usepackage{amsfonts}
 \usepackage{amsthm}
 \usepackage{amsmath}
@@ -68,16 +70,18 @@
 % Set up the boiler plate at the top of the page
 
 \begin{center}
-\textbf{{\large Mathematical Modeling and Consulting Final Report}}\\
+\textbf{{\large Mathematical Modeling and Consulting }}\\
 
 \vspace \shiftdowna
 \includegraphics[width=0.5\textwidth]{jhu.png}\\
 
 % Home Department
 \vspace \shiftdowna
-\underline {Your Home Department}\\ 
+\underline {Sponsor}\\ 
 \vspace{5pt}
-\textbf{{\large Applied Mathematics and Statistics}} \\
+\textbf{\large Sponsor Name} \\
+\vspace\shiftdowna
+\textbf{{Final Report}}
 
 % TITLE
 \vspace \shiftdowna
@@ -87,15 +91,24 @@
 \vspace{0.35in}
 \underline {Team Members}\\
 \vspace{5pt}
-John Doe (Project Manager), \texttt{john.doe@jhu.edu} \\
+John Doe (Project Manager), Home Department\\
+\texttt{john.doe@jhu.edu} \\
 \vspace{10pt}
-Jane Doe (Report Coordinator), \texttt{jane.doe@jhu.edu}\\
+Jane Doe (Report Coordinator), Home Department
+%\texttt{jane.doe@jhu.edu}
 
 % INSTRUCTOR
 \vspace \shiftdownb
 \underline {Academic Mentor} \\
 \vspace{5pt}
-\text{Dr.~N.~.H.~Lee}, \texttt{nhlee@jhu.edu}
+\text{Dr.~N.~.H.~Lee}, Applied Mathematics and Statistics\\
+\texttt{nhlee@jhu.edu}
+
+% Consultants
+\vspace \shiftdownb 
+\underline {Consultant}\\
+\vspace{5pt}
+Jason Bourne\\
 
 % DATE
 \vspace \shiftdowna
@@ -136,6 +149,14 @@ Date: Last Complied on \today
 %\include{D_Analysis}
 %\include{E_Results}
 %\include{F_Conclusion}
+
+%\include{chapter1}
+%\include{chapter2}
+%\include{chapter3}
+%\include{chapter4}
+%\include{chapter5}
+%\include{chapter6}
+
 
 \appendix
 \ifthenelse{\boolean{@twoside}}{\myclearpage}{}
@@ -212,5 +233,4 @@ the equatorial plane.
 \nocite{*}  % List ALL references in your references, not just the ones cited in the text.
 % This scheme automatically alphabetizes the Bibliography.
 \bibliography{Biblio}
-
 \end{document}
