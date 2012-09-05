@@ -259,6 +259,13 @@ Dr.~N.~H.~Lee \\
 \end{frame}
 
 \begin{frame}
+    \frametitle{Acknowledgement}
+    \begin{center}
+        \href{http://www.ipam.ucla.edu/programs/rips2011/}{
+        \includegraphics[width=0.8\textwidth]{images/ipam}}        
+    \end{center}
+\end{frame}
+\begin{frame}
     \frametitle{What is Work Statement?}
     \begin{itemize}
         \item The written proposal and definition of the project
@@ -328,9 +335,32 @@ It sets forth:
     \frametitle{Demo: R}
     \begin{columns}
         \begin{column}{0.5\textwidth}
+            \begin{figure}
+                \centering
+            \href{http://rstudio.org}{
+            \includegraphics[width=\textwidth]{images/Rstudio}
+            }
+            \caption{R Studio}
+        \end{figure}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{figure}
+                \centering
+                    \href{http://www.r-project.org}{
+                        \includegraphics[width=\textwidth]{images/Rproject}}
+                        \caption{R}
+            \end{figure}
+        \end{column}
+    \end{columns} 
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Demo: R}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
     \begin{lstlisting}
 install.packages(faraway)
-require(farway)
+require(faraway)
 data(eco)
 plot(income ~ usborn, 
     data=eco,
@@ -388,9 +418,9 @@ abline(coef(g))
 \end{document}
             \end{lstlisting}\\
             \hline
-            Complier & Firefox and etc. & pdflatex and etc. \\
+            Compiler & Firefox and etc. & pdflatex and etc. \\
             \hline
-            Output  & Webpage & PDF file
+            Output  & Web-page & PDF file
         \end{tabular}
         \caption{HTML vs \LaTeXs}
         \label{tab:htmlvslatex}
@@ -402,10 +432,10 @@ abline(coef(g))
     \begin{itemize}
         \item Demo on preparing a resume using \LaTeXs \texttt{moderncv} package:
             \begin{itemize}
-                \item Install \LaTeXs (MikTex in Windows and MacTex in OSX),
+                \item Install \LaTeXs (MikTeX in Windows and MacTeX in OSX),
                 \item Download \texttt{moderncv} package files from the course folder,
                 \item Change file names to reflect you,
-                \item Edit the tex file,
+                \item Edit the TeX file,
                 \item Compile using your favorite \LaTeXs editor,
                 \item Look at the resulting PDF file.
             \end{itemize}
@@ -480,6 +510,15 @@ git pull origin master
     \end{itemize}
 \end{frame}
 
+\begin{frame}[fragile]
+    \frametitle{Unofficial Way to Access the Course Folder}
+    \vskip0.5in
+    \begin{center}
+        \href{http://cis.jhu.edu/~nhlee/550400.html/}{
+            \url{http://cis.jhu.edu/~nhlee/550400.html/}
+        }
+    \end{center}
+\end{frame}
 
 
 \section{Principles}
@@ -495,7 +534,6 @@ git pull origin master
          \item For many \#s, summarize overall pattern 
      \end{enumerate}
 \end{frame}
-
 
 \section{Tools}
 \begin{frame}
