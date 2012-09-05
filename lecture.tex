@@ -126,7 +126,7 @@ Dr.~N.~H.~Lee \\
 
 %\date{\mygreen \today} % \\ Sparks, Nevada}
 
-\date{\mygreen Last Complied on \today} 
+\date{\mygreen Last Compiled on \today} 
 
 \begin{document}
 
@@ -157,7 +157,9 @@ Dr.~N.~H.~Lee \\
     \frametitle{What is Mathematical Modeling?}
     \begin{figure}
             \centering
+            \href{http://www.youtube.com/watch?v=WNlCBy07z08}{
             \includegraphics[width=0.4\textwidth]{Moneyballs.jpg}
+            }
             \caption{Money Ball}
             \label{fig:MondayBall}
     \end{figure}
@@ -167,7 +169,9 @@ Dr.~N.~H.~Lee \\
     \frametitle{What is Mathematical Modeling?}
     \begin{figure}
         \centering
+        \href{http://www.youtube.com/watch?v=dsrOXJwGwtk}{
         \includegraphics[width=\textwidth]{TrillionDollarBet.png}
+        }
         \caption{Trillion Dollar Bet}
                 \label{fig:LTCM}
     \end{figure}
@@ -177,10 +181,9 @@ Dr.~N.~H.~Lee \\
     \frametitle{What is Mathematical Modeling?}
     \begin{figure}
         \centering
-        \includegraphics[width=0.6\textwidth]{LAPDUCLA.png}
+        \href{http://www.youtube.com/watch?v=HZ7fLuO7zb4}{\includegraphics[width=0.6\textwidth]{LAPDUCLA.png}}
         \caption{
-        \href{http://losangeles.cbslocal.com/video?autoStart=true&topVideoCatNo=default&clipId=6724212}{LAPD Fighting Crime with Math}}
-                \label{fig:LAPDUCLA}
+        {LAPD Fighting Crime with Math}} \label{fig:LAPDUCLA}
     \end{figure}
 \end{frame}
 
@@ -291,6 +294,7 @@ It sets forth:
     \begin{itemize}
         \item Given the nature of research, it should not include promises
             that your consulting team cannot be certain to achieve
+            \vspace{1cm}
         \item It may be necessary after discussion and agreements among
             various parties to modify and renegotiate the work statement as 
             the project progresses
@@ -330,8 +334,8 @@ require(farway)
 data(eco)
 plot(income ~ usborn, 
     data=eco,
-    xlab='Proportion US born'
-    ylab='Mean Annual Income'
+    xlab=`Proportion US born'
+    ylab=`Mean Annual Income'
     )
     \end{lstlisting}
         \end{column}
@@ -350,8 +354,8 @@ g <- lm(income ~ usborn, eco)
 summary(g)
 plot(income ~ usborn, 
     data = eco,
-    xlab='Proportion US born',
-    ylab='Mean Annual Income',
+    xlab=`Proportion US born',
+    ylab=`Mean Annual Income',
     xlim=c(0,1),
     ylim=c(15000,70000),
     xaxs='i')
