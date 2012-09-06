@@ -193,7 +193,51 @@ Dr.~N.~H.~Lee \\
 \end{frame}
 
 \begin{frame}
-    \frametitle{What is Mathematical Modeling?}
+    \frametitle{What is Work Statement?}
+    \begin{itemize}
+        \item The written proposal and definition of the project
+            \vspace{1cm}
+        \item Your consulting team's ``contract'' with the sponsor
+            \vspace{1cm}
+        \item It is ultimately given to the sponsor for review and signature
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{What is Work Statement?}
+It sets forth: 
+    \begin{itemize}
+        \item the nature of the project,
+        \item the specific objectives of the project, 
+        \item the result expected, 
+        \item the ``deliverable'' for the project.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{What is Work Statement?}
+    \begin{itemize}
+        \item The scope of the project must be within the time table for the
+            course
+            \vspace{1cm}
+        \item The deliverables are reasonable and appropriate
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{What is Work Statement?}
+    \begin{itemize}
+        \item Given the nature of research, it should not include promises
+            that your consulting team cannot be certain to achieve
+            \vspace{1cm}
+        \item It may be necessary after discussion and agreements among
+            various parties to modify and renegotiate the work statement as 
+            the project progresses
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Example: Insurance Redlining}
     \begin{figure}
         \centering
         \href{http://en.wikipedia.org/wiki/Redlining}{
@@ -272,58 +316,10 @@ Dr.~N.~H.~Lee \\
         \includegraphics[width=0.8\textwidth]{images/ipam}}        
     \end{center}
 \end{frame}
-\begin{frame}
-    \frametitle{What is Work Statement?}
-    \begin{itemize}
-        \item The written proposal and definition of the project
-            \vspace{1cm}
-        \item Your consulting team's ``contract'' with the sponsor
-            \vspace{1cm}
-        \item It is ultimately given to the sponsor for review and signature
-    \end{itemize}
-\end{frame}
-
-\begin{frame}
-    \frametitle{What is Work Statement?}
-It sets forth: 
-    \begin{itemize}
-        \item the nature of the project,
-        \item the specific objectives of the project, 
-        \item the result expected, 
-        \item the ``deliverable'' for the project.
-    \end{itemize}
-\end{frame}
-
-\begin{frame}
-    \frametitle{What is Work Statement?}
-    \begin{itemize}
-        \item The scope of the project must be within the time table for the
-            course
-            \vspace{1cm}
-        \item The deliverables are reasonable and appropriate
-    \end{itemize}
-\end{frame}
-\begin{frame}
-    \frametitle{What is Work Statement?}
-    \begin{itemize}
-        \item Given the nature of research, it should not include promises
-            that your consulting team cannot be certain to achieve
-            \vspace{1cm}
-        \item It may be necessary after discussion and agreements among
-            various parties to modify and renegotiate the work statement as 
-            the project progresses
-    \end{itemize}
-\end{frame}
-
             
 \begin{frame}
     \frametitle{Programmings in this class}
     \begin{itemize}
-        \item R:
-            \begin{itemize}
-                \item \texttt{tikzDevice}
-                \item \texttt{lm}
-            \end{itemize}
         \item \LaTeXs: 
             \begin{itemize}
                 \item \texttt{moderncv}
@@ -335,74 +331,12 @@ It sets forth:
             \begin{itemize}
                 \item \texttt{git gui}
             \end{itemize}
+        \item R:
+            \begin{itemize}
+                \item \texttt{tikzDevice}
+                \item \texttt{lm}
+            \end{itemize}
     \end{itemize}
-\end{frame}
-
-\begin{frame}[fragile]
-    \frametitle{Demo: R}
-    \begin{columns}
-        \begin{column}{0.5\textwidth}
-            \begin{figure}
-                \centering
-            \href{http://rstudio.org}{
-            \includegraphics[width=\textwidth]{images/Rstudio}
-            }
-            \caption{R Studio}
-        \end{figure}
-        \end{column}
-        \begin{column}{0.5\textwidth}
-            \begin{figure}
-                \centering
-                    \href{http://www.r-project.org}{
-                        \includegraphics[width=\textwidth]{images/Rproject}}
-                        \caption{R}
-            \end{figure}
-        \end{column}
-    \end{columns} 
-\end{frame}
-
-\begin{frame}[fragile]
-    \frametitle{Demo: R}
-    \begin{columns}
-        \begin{column}{0.5\textwidth}
-    \begin{lstlisting}
-install.packages(faraway)
-require(faraway)
-data(eco)
-plot(income ~ usborn, 
-    data=eco,
-    xlab=`Proportion US born'
-    ylab=`Mean Annual Income'
-    )
-    \end{lstlisting}
-        \end{column}
-        \begin{column}{0.5\textwidth}
-            \includegraphics[width=\textwidth]{FigureFarawayFigure11dot1.png}
-        \end{column}
-    \end{columns} 
-\end{frame}
-
-\begin{frame}[fragile]
-    \frametitle{Demo: R}
-    \begin{columns}
-        \begin{column}{0.5\textwidth}
-            \begin{lstlisting}
-g <- lm(income ~ usborn, eco) 
-summary(g)
-plot(income ~ usborn, 
-    data = eco,
-    xlab=`Proportion US born',
-    ylab=`Mean Annual Income',
-    xlim=c(0,1),
-    ylim=c(15000,70000),
-    xaxs='i')
-abline(coef(g))
-            \end{lstlisting}
-        \end{column}
-        \begin{column}{0.5\textwidth}
-            \includegraphics[width=\textwidth]{FigureFarawayFigure11dot1b.png} 
-        \end{column}
-    \end{columns} 
 \end{frame}
 
 \begin{frame}[fragile]
@@ -526,6 +460,74 @@ git pull origin master
         }
     \end{center}
 \end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Demo: R}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{figure}
+                \centering
+            \href{http://rstudio.org}{
+            \includegraphics[width=\textwidth]{images/Rstudio}
+            }
+            \caption{R Studio}
+        \end{figure}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{figure}
+                \centering
+                    \href{http://www.r-project.org}{
+                        \includegraphics[width=\textwidth]{images/Rproject}}
+                        \caption{R}
+            \end{figure}
+        \end{column}
+    \end{columns} 
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Demo: R}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+    \begin{lstlisting}
+install.packages(faraway)
+require(faraway)
+data(eco)
+plot(income ~ usborn, 
+    data=eco,
+    xlab=`Proportion US born'
+    ylab=`Mean Annual Income'
+    )
+    \end{lstlisting}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \includegraphics[width=\textwidth]{FigureFarawayFigure11dot1.png}
+        \end{column}
+    \end{columns} 
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Demo: R}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{lstlisting}
+g <- lm(income ~ usborn, eco) 
+summary(g)
+plot(income ~ usborn, 
+    data = eco,
+    xlab=`Proportion US born',
+    ylab=`Mean Annual Income',
+    xlim=c(0,1),
+    ylim=c(15000,70000),
+    xaxs='i')
+abline(coef(g))
+            \end{lstlisting}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \includegraphics[width=\textwidth]{FigureFarawayFigure11dot1b.png} 
+        \end{column}
+    \end{columns} 
+\end{frame}
+
 
 
 \section{Principles}
