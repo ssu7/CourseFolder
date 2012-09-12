@@ -738,7 +738,7 @@ born within the state (and similarly for naturalized citizens).
 \begin{frame}[fragile]
     \frametitle{Demo: \LaTeXs + Git}
     \begin{POEMbender}
-       \quad 
+    (HW for class activities)
     \end{POEMbender}
         \begin{itemize}
             \item Start up a git folder
@@ -803,13 +803,17 @@ git pull origin master
 \end{figure}
 \end{frame}
 
+
 \begin{frame}[fragile]
     \frametitle{Tutorial: Git}
     \begin{columns}
         \begin{column}{0.5\textwidth}
     \begin{lstlisting}
 cd ~/550400
+
 git status 
+git add .
+git commit -am 'branching now'
 git branch personal
 git branch
 git checkout personal
@@ -818,15 +822,129 @@ git status
 git add . 
 git commit -am 'branching demo'
 git checkout master
+git branch -D personal
     \end{lstlisting}
         \end{column}
         \begin{column}{0.5\textwidth}
+    Two parts:
     \begin{itemize}
-        \item Demo I: build and update the \texttt{master} Git branch
-        \item Demo II: create and update a \texttt{personal} Git branch
+        \item checks if there has been any change to the folder
+        \item build and update the \texttt{master} git branch
+        \item create and update a \texttt{personal} git branch
     \end{itemize}
         \end{column}
     \end{columns} 
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Tutorial: Git}
+    After years of using git, you might find this funny: 
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{figure}
+                \begin{center}
+                    \includegraphics[width=\textwidth]{images/gitpull.jpg}
+                \end{center}
+            \end{figure}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{lstlisting}
+git pull origin master
+            \end{lstlisting}
+        \end{column}
+    \end{columns} 
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Tutorial: Git}
+    After years of using git, you might find this funny: 
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{figure}
+                \begin{center}
+                    \includegraphics[width=\textwidth]{images/gitpush.jpg}
+                \end{center}
+            \end{figure}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{lstlisting}
+git push origin master
+            \end{lstlisting}
+        \end{column}
+    \end{columns} 
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Tutorial: Git}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{figure}
+                \caption{For \$19.99, you can also have your own:}
+                \begin{center}
+                    \includegraphics[width=\textwidth]{images/gitrdone.jpg}
+                \end{center}
+            \end{figure}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+\begin{lstlisting}
+cd ~/
+mkdir hub.git
+mkdir computerA.git
+mkdir computerB.git
+
+git init --bare hub.git
+\end{lstlisting}
+        \end{column}
+    \end{columns} 
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Tutorial: Git}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+\begin{lstlisting}
+cd computerA.git
+git init 
+git remote add origin ~/hub.git
+cat Hello >> commonfile.txt
+git add commonfile.txt 
+git pull origin master
+git commit -am 'from A'
+git push origin master
+\end{lstlisting}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+\begin{lstlisting}
+cd computerB.git
+git init 
+git remote add origin ~/hub.git
+cat World >> fileB.txt
+git add commonfile.txt 
+git pull origin master
+git commit -am 'from B'
+git push origin master
+\end{lstlisting}
+        \end{column}
+    \end{columns} 
+\end{frame}
+
+
+
+
+
+\begin{frame}
+    \frametitle{Tutorial: Git}
+    \texttt{.gitignore}?
+    \vskip0.1in
+    \begin{itemize}
+        \item N.B.~the course folder already has one 
+        \item Use it to let \emph{git} know the files to \emph{ignore} while
+            version controlling
+        \item one particular usage: create \texttt{.gitignore} at the root of
+            your git folder 
+        \item files already been list under the git watch list will not be
+            ignored even after creation of \texttt{.gitignore} 
+    \end{itemize}
 \end{frame}
 
 \subsection{Vim}
