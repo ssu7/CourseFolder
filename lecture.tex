@@ -117,7 +117,7 @@ framextopmargin=50pt,
 \setbeamercolor{normal text in math text}{parent=math text}
 
 \setbeamertemplate{navigation symbols}{} %gets rid of navigation symbols
-\setbeamertemplate{mini frames}{}
+%\setbeamertemplate{mini frames}{}
 \setbeamertemplate{footline}[frame number]
 \beamertemplateshadingbackground{blue!5}{yellow!10}
 
@@ -143,13 +143,10 @@ Dr.~N.~H.~Lee \\
   \titlepage
 \end{frame}
 
-
-
 \begin{frame}
   \frametitle{Outline}
   \tableofcontents
 \end{frame}
-
 
 \section{Class Info.}
 
@@ -261,7 +258,7 @@ Dr.~N.~H.~Lee \\
     \end{itemize}
 \end{frame}
    
-\subsection{Work Statement}
+\subsection{Course Project}
 \begin{frame}
     \frametitle{A recurring theme}
     Frequently Recurring Elements of doing a Project in Industry:
@@ -432,7 +429,7 @@ It sets forth:
         \begin{figure}
             \centering
             \caption{Crime rates and religious beliefs}
-            \href{http://www.economist.com/blogs/graphicdetail/2012/09/daily-chart/print}{
+            \href{http://www.economist.com/blogs/graphicdetail/2012/09/daily-chart/}{
             \includegraphics[width=0.7\textwidth]{images/hellvsheaven.png}}
     \end{figure}
 \end{frame}
@@ -603,6 +600,16 @@ born within the state (and similarly for naturalized citizens).
     \end{figure}
 \end{frame}
 
+\begin{frame}
+    \frametitle{Example: Sherlock Holmes and the Bicycle Tracks}
+    \begin{align*}
+        &f_x(t) = r_x(t) +
+        \dfrac{L}{\sqrt{1+(r_y^\prime(t)/r_x^\prime(t))^2}}\\
+        &f_y(t) = r_y(t) + \dfrac{L r_y^\prime(t)/r_x^\prime(t)}{
+        \sqrt{1+ (r_y^\prime(t)/r_x^\prime(t))^2}}
+    \end{align*}
+\end{frame}
+
 \section{Tutorials}
 
 \subsection{\LaTeX}
@@ -738,16 +745,17 @@ born within the state (and similarly for naturalized citizens).
 \begin{frame}[fragile]
     \frametitle{Demo: \LaTeXs + Git}
     \begin{POEMbender}
-    (HW for class activities)
+        Exercise :
     \end{POEMbender}
         \begin{itemize}
-            \item Start up a git folder
-            \item Create and edit the \texttt{.gitignore} file
-            \item Download the template for a beamer file
-            \item Look up the poem from the book
-            \item One slide per stanza
-            \item Compile after each stanza
-            \item Commit after creating each stanza
+            \item Start up a git folder,
+            \item Create and edit the \texttt{.gitignore} file,
+            \item Download the template for a beamer file,
+            \item Look up the poem from the book,
+            \item One slide per stanza,
+            \item Use \texttt{verse} environment,
+            \item Compile after each stanza,
+            \item Commit after creating each stanza,
             \item Repeat until done.
         \end{itemize}
 \end{frame}
@@ -909,9 +917,8 @@ git push origin master
     \begin{lstlisting}
 cd ~/550400
 
-git status 
-git add .
-git commit -am 'done now'
+git gui
+git reset --hard HEAD
 
 git branch personal
 git branch
@@ -954,11 +961,24 @@ git branch -D personal
 \end{frame}
 
 \subsection{Vim}
+
+\newtheorem{DEFVim}{Vim}
 \begin{frame}
     \frametitle{Vim}
-    \begin{center}
+    \begin{DEFVim}
         Vim is a \emph{highly customizable} text editor 
-    \end{center}
+    \end{DEFVim}
+    \vskip0.1in
+    \begin{enumerate}
+        \item \LaTeX, R, C/C++, Java, Python, Git and etc.
+        \item Regular expression, syntax coloring, autocompletion
+        \item Try Firefox + Wasavi/Vimperator/Vimium
+        \item \texttt{<ESC>}-mode
+        \begin{itemize}
+            \item \texttt{:}-mode, aka., the last line mode
+            \item \texttt{i}-mode, aka., the insert mode
+        \end{itemize}
+    \end{enumerate}
 \end{frame}
 
 \subsection{R}
