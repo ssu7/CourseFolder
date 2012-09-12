@@ -1,5 +1,12 @@
 \documentclass[hyperref={colorlinks=false},compress,handout,10pt]{beamer}
 
+\usepackage{tikz}
+%\usepackage[active,tightpage,psfixbb]{preview}
+
+%\PreviewEnvironment{pgfpicture}
+
+%\setlength\PreviewBorder{0pt}
+
 \newlength{\wideitemsep}
 \setlength{\wideitemsep}{\itemsep}
 \addtolength{\wideitemsep}{100pt}
@@ -155,6 +162,17 @@ Dr.~N.~H.~Lee \\
         \item Blackboard
         \item Misc.
     \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{OH Location}
+    \begin{figure}
+        \caption{Clark Hall 320B}
+        \begin{center}
+            \includegraphics[width=0.75\textwidth]{images/Clark320B.jpg}
+        \end{center}
+        \label{fig:ClarkHall320B}
+    \end{figure}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -496,8 +514,8 @@ It sets forth:
     \begin{description}
         \item[\texttt{race}] Racial composition in percentage of minority,
         \item[\texttt{fire}] Fire per 100 housing units,
-        \item[\texttt{theft}] Theft per 100 housing units,
-        \item[\texttt{age}] Theft per 1000 population,
+        \item[\texttt{theft}] Theft per 1000 population,
+        \item[\texttt{age}] percent of housing unit built before 1939,
         \item[\texttt{involact}] New FAIR plan policies and renewal per 100 housing units,
         \item[\texttt{income}] Median family income in thousands of dollars,
         \item[\texttt{side}] North or South side of Chicago.
@@ -574,7 +592,16 @@ born within the state (and similarly for naturalized citizens).
     \hfill -- \textit{The Adventure of the Priory School} by Arthur Conan Doyle
 \end{frame}
 
-
+\begin{frame}
+    \frametitle{Example: Sherlock Holmes and the Bicycle Tracks}
+    \begin{figure}
+        \caption{Which one is the front wheel?}
+        \begin{center}
+            \includegraphics[width=\textwidth]{images/sholmesbike.png}
+        \end{center}
+        \label{fig:sholmesbike}
+    \end{figure}
+\end{frame}
 
 \section{Tutorials}
 
@@ -672,12 +699,12 @@ born within the state (and similarly for naturalized citizens).
     \end{itemize}
 \end{frame}
 
-\begin{frame}
-    \frametitle{Demo: \LaTeXs}
-    \begin{center}
-        \href{http://cdn.theladders.net/static/pdf/Senator_Obama_Resume.pdf}{Obama's resume}
-    \end{center}
-\end{frame}
+%\begin{frame}
+%    \frametitle{Demo: \LaTeXs}
+%    \begin{center}
+%        \href{http://cdn.theladders.net/static/pdf/Senator_Obama_Resume.pdf}{In cObama's resume}
+%    \end{center}
+%\end{frame}
 
 \begin{frame}[fragile]
     \frametitle{Cautions: \LaTeXs}
@@ -764,7 +791,7 @@ git clone http://cis.jhu.edu/~nhlee/550400.git
 \begin{frame}[fragile]
     \frametitle{Tutorial: Git}
 \begin{lstlisting}
-cd ~/550400.git
+cd ~/550400
 git reset --hard HEAD
 git pull origin master
 \end{lstlisting}
@@ -774,20 +801,32 @@ git pull origin master
         \includegraphics[height=0.6\textheight]{gitguiusing.png}
     \label{fig:gitgui4}
 \end{figure}
-    
 \end{frame}
 
-\begin{frame}
+\begin{frame}[fragile]
     \frametitle{Tutorial: Git}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+    \begin{lstlisting}
+cd ~/550400
+git status 
+git branch personal
+git branch
+git checkout personal
+edit some file 
+git status 
+git add . 
+git commit -am 'branching demo'
+git checkout master
+    \end{lstlisting}
+        \end{column}
+        \begin{column}{0.5\textwidth}
     \begin{itemize}
-        \item Demo I: build a \emph{personal} Git folder 
-            \begin{itemize}
-                \item Create some files
-                \item Stage the files 
-                \item Commit the files
-            \end{itemize}
-        \item Demo II: build the \emph{course} Git folder
+        \item Demo I: build and update the \texttt{master} Git branch
+        \item Demo II: create and update a \texttt{personal} Git branch
     \end{itemize}
+        \end{column}
+    \end{columns} 
 \end{frame}
 
 \subsection{Vim}
@@ -801,7 +840,7 @@ git pull origin master
 \subsection{R}
 
 \begin{frame}[fragile]
-    \frametitle{Demo: R}
+    \frametitle{Demo: R + \LaTeX}
     \begin{columns}
         \begin{column}{0.5\textwidth}
             \begin{figure}
@@ -824,33 +863,42 @@ git pull origin master
 \end{frame}
 
 \begin{frame}[fragile]
-    \frametitle{Demo: R}
+    \frametitle{Demo: R + \LaTeX}
     \begin{columns}
-        \begin{column}{0.5\textwidth}
+        \begin{column}{0.45\textwidth}
     \begin{lstlisting}
 install.packages(faraway)
+install.packages(tikzDevice)
 require(faraway)
+require(tikzDevice)
 data(eco)
+tikz('embeddedfig1.tex', 
+    standAlone=F, 
+    width=5,height=5)
 plot(income ~ usborn, 
     data=eco,
     xlab=`Proportion US born'
     ylab=`Mean Annual Income'
     )
+dev.off()
     \end{lstlisting}
         \end{column}
-        \begin{column}{0.5\textwidth}
-            \includegraphics[width=\textwidth]{FigureFarawayFigure11dot1.png}
+        \begin{column}{0.55\textwidth}
+        \begin{figure}[0.8\textwidth]
+            \input{images/embeddedfig1.tex}
+        \end{figure}
         \end{column}
     \end{columns} 
 \end{frame}
 
 \begin{frame}[fragile]
-    \frametitle{Demo: R}
+    \frametitle{Demo: R + \LaTeX}
     \begin{columns}
-        \begin{column}{0.5\textwidth}
+        \begin{column}{0.45\textwidth}
             \begin{lstlisting}
-g <- lm(income ~ usborn, eco) 
-summary(g)
+tikz('embeddedfig2.tex', 
+    standAlone=F, 
+    width=5,height=5)
 plot(income ~ usborn, 
     data = eco,
     xlab=`Proportion US born',
@@ -858,31 +906,52 @@ plot(income ~ usborn,
     xlim=c(0,1),
     ylim=c(15000,70000),
     xaxs='i')
+g<-lm(income~usborn,eco)
 abline(coef(g))
+dev.off()
             \end{lstlisting}
         \end{column}
-        \begin{column}{0.5\textwidth}
-            \includegraphics[width=\textwidth]{FigureFarawayFigure11dot1b.png} 
+        \begin{column}{0.55\textwidth}
+            \input{images/embeddedfig2.tex}
         \end{column}
     \end{columns} 
 \end{frame}
 
-\begin{frame}[fragile]
-    \frametitle{Example: Insurance Redlining}
-\begin{lstlisting}
-data(chredlin);
-chredlin;
-head(chredlin);
-summary(chredlin);
-par(mfrow=c(1,1));
-pairs(chredlin);
-summary(lm(involact ~ race, chredlin));
-plot(involact ~ race, chredlin);
-abline(lm(involact ~ race, chredlin));
-plot(fire ~ race, chredlin);
-abline(lm(fire ~ race, chredlin));
-\end{lstlisting}
-\end{frame}
+%\begin{frame}[fragile]
+%    \frametitle{Example: Insurance Redlining}
+%\begin{lstlisting}
+%data(chredlin);
+%chredlin;
+%head(chredlin);
+%summary(chredlin);
+%par(mfrow=c(1,1));
+%pairs(chredlin);
+%summary(lm(involact ~ race, chredlin));
+%plot(involact ~ race, chredlin);
+%abline(lm(involact ~ race, chredlin));
+%plot(fire ~ race, chredlin);
+%abline(lm(fire ~ race, chredlin));
+%\end{lstlisting}
+%\end{frame}
 
+\begin{frame}
+    \frametitle{Today's Lesson Plan}
+    \begin{enumerate}
+        \item So, what else is wrong with ``Crime rate and religious beliefs''? 
+        \item Sherlock Homes and Bicycle 
+            \begin{itemize}
+                \item What is wrong with this? 
+                \item What can we do to fix? 
+                \item ``Mathify''?
+            \end{itemize}
+        \item How do you update my git course git folder?
+            \begin{itemize}
+                \item Doing status-add-commit-pull routine
+                \item Managing merge-conflicts
+                \item Branching out and checking in \& out
+            \end{itemize}
+        \item Problem Set 2.1, 2.3, 2.5, 2.7, 2.9
+    \end{enumerate}
+\end{frame}
 
 \end{document}
