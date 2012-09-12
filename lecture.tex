@@ -804,37 +804,6 @@ git pull origin master
 \end{frame}
 
 
-\begin{frame}[fragile]
-    \frametitle{Tutorial: Git}
-    \begin{columns}
-        \begin{column}{0.5\textwidth}
-    \begin{lstlisting}
-cd ~/550400
-
-git status 
-git add .
-git commit -am 'branching now'
-git branch personal
-git branch
-git checkout personal
-edit some file 
-git status 
-git add . 
-git commit -am 'branching demo'
-git checkout master
-git branch -D personal
-    \end{lstlisting}
-        \end{column}
-        \begin{column}{0.5\textwidth}
-    Two parts:
-    \begin{itemize}
-        \item checks if there has been any change to the folder
-        \item build and update the \texttt{master} git branch
-        \item create and update a \texttt{personal} git branch
-    \end{itemize}
-        \end{column}
-    \end{columns} 
-\end{frame}
 
 \begin{frame}[fragile]
     \frametitle{Tutorial: Git}
@@ -877,7 +846,7 @@ git push origin master
 \begin{frame}[fragile]
     \frametitle{Tutorial: Git}
     \begin{columns}
-        \begin{column}{0.5\textwidth}
+        \begin{column}{0.4\textwidth}
             \begin{figure}
                 \caption{For \$19.99, you can also have your own:}
                 \begin{center}
@@ -885,7 +854,7 @@ git push origin master
                 \end{center}
             \end{figure}
         \end{column}
-        \begin{column}{0.5\textwidth}
+        \begin{column}{0.6\textwidth}
 \begin{lstlisting}
 cd ~/
 mkdir hub.git
@@ -893,6 +862,10 @@ mkdir computerA.git
 mkdir computerB.git
 
 git init --bare hub.git
+
+cd hub.git
+cd hooks
+cp post-update.sample post-update
 \end{lstlisting}
         \end{column}
     \end{columns} 
@@ -929,6 +902,39 @@ git push origin master
 \end{frame}
 
 
+\begin{frame}[fragile]
+    \frametitle{Tutorial: Git}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+    \begin{lstlisting}
+cd ~/550400
+
+git status 
+git add .
+git commit -am 'done now'
+
+git branch personal
+git branch
+git checkout personal
+
+edit some file 
+git status 
+git add . 
+git commit -am 'personal edit'
+
+git checkout master
+git branch -D personal
+    \end{lstlisting}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+    \begin{itemize}
+        \item checks if there has been any change to the folder
+        \item build and update the \texttt{master} git branch
+        \item create and update a \texttt{personal} git branch
+    \end{itemize}
+        \end{column}
+    \end{columns} 
+\end{frame}
 
 
 
