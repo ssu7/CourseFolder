@@ -289,10 +289,10 @@ cp post-update.sample post-update
 cd computerA.git
 git init 
 git remote add origin ~/hub.git
-echo 'Hello' >> commonfile.txt
+echo 'Hello A' >> commonfile.txt
 git add commonfile.txt 
-git pull origin master
 git commit -am 'from A'
+git pull origin master
 git push origin master
 \end{lstlisting}
         \end{column}
@@ -301,10 +301,10 @@ git push origin master
 cd computerB.git
 git init 
 git remote add origin ~/hub.git
-echo ' World' >> fileB.txt
+echo ' World B' >> commonfile.txt
 git add commonfile.txt 
-git pull origin master
 git commit -am 'from B'
+git pull origin master
 git push origin master
 \end{lstlisting}
         \end{column}
