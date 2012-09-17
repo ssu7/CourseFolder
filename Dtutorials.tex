@@ -1,0 +1,464 @@
+\section{Tutorials}
+
+\subsection{\LaTeX}
+
+\begin{frame}
+    \frametitle{Programmings in this class}
+    \begin{itemize}
+        \item \LaTeXs: 
+            \begin{itemize}
+                \item \texttt{moderncv}
+                \item \texttt{beamer}
+                \item \texttt{report}
+                \item \href{http://www.texample.net}{\texttt{pgf/TikZ}}
+            \end{itemize}
+        \item Git
+            \begin{itemize}
+                \item \href{http://git-scm.com/doc}{\texttt{git gui}}
+            \end{itemize}
+        \item R:
+            \begin{itemize}
+                \item \texttt{lm}
+                \item \href{https://catalyst.library.jhu.edu/catalog/bib_3642743}{\texttt{ggplot2}}
+                \item \href{http://www.texample.net/tikz/examples/tikzdevice-demo/}{\texttt{tikzDevice}}
+                \item \href{http://www.public.iastate.edu/~dicook/VIGRE/R-packages-slides.pdf}{\texttt{R CMD build}}
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]
+    \frametitle{Where to get some help for \LaTeXs}
+    \begin{center}
+    \href{http://en.wikibooks.org/wiki/LaTeX/}{http://en.wikibooks.org/wiki/LaTeX/}
+    \end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Tutorial: \LaTeXs}
+    \LaTeXs is a computer language for writing a scholarly paper:
+    \begin{table}
+        \centering
+        \caption{HTML vs \LaTeXs}
+        \begin{tabular}{c|p{3cm}|p{3cm}}
+            \quad   &   HTML    & \LaTeXs \\ 
+            \hline
+            Code    & 
+            \begin{lstlisting}
+<html> 
+ . . .
+</html>
+            \end{lstlisting} &  
+            \begin{lstlisting}
+\begin{document}
+ . . .
+\end{document}
+            \end{lstlisting}\\
+            \hline
+            Compiler & Firefox and etc. & pdflatex and etc. \\
+            \hline
+            Output  & Web-page & PDF file
+        \end{tabular}
+        \label{tab:htmlvslatex}
+    \end{table}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Tutorial: \LaTeXs}
+    TeXworks is:
+    \begin{itemize}
+        \item an editing tool that is separate from \LaTeX,
+        \item available in Linux, OSX and Windows,
+        \item avaiable in: 
+    \end{itemize}
+    \vskip0.3in
+    \begin{center}
+    \href{http://code.google.com/p/texworks/}
+    {http://code.google.com/p/texworks/}
+    \end{center}
+\end{frame}
+
+
+\begin{frame}[fragile]
+    \frametitle{Tutorial: \LaTeXs}
+    \begin{itemize}
+        \item Demo on preparing a resume using \LaTeXs \texttt{moderncv} package:
+            \begin{itemize}
+                \item Install \LaTeXs (MikTeX in Windows and MacTeX in OSX),
+                \item Download \texttt{moderncv} package files from the course folder,
+                \item Change file names to reflect you,
+                \item Edit the TeX file,
+                \item Compile using your favorite \LaTeXs editor,
+                \item Look at the resulting PDF file.
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+%\begin{frame}
+%    \frametitle{Demo: \LaTeXs}
+%    \begin{center}
+%        \href{http://cdn.theladders.net/static/pdf/Senator_Obama_Resume.pdf}{In cObama's resume}
+%    \end{center}
+%\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Tutorial: \LaTeX}
+    Typing mathematics in \LaTeX:
+    \begin{lstlisting}
+Hello $\int_0^1 \sin(x) dx$ World
+\vskip0.5in
+Hello $$\int_0^1 \sin(x) dx$$ World
+    \end{lstlisting}
+    \vskip0.1in
+Hello $\int_0^1 \sin(x) dx$ World
+\vskip0.5in
+Hello $$\int_0^1 \sin(x) dx$$ World
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Cautions: \LaTeXs}
+    There are numerous quirky \LaTeXs rules:
+    \begin{itemize}
+        \item opening quotation is not the same as the closing quotation,
+        \item period yields \emph{two} blank spaces, 
+        \item for \%, need to type \verb+\%+,
+        \item for \textbackslash, need to type \verb+\textbackslash+,
+        \item for /, need to type /,
+        \item for \{, need to type \verb+\{+,
+        \item for \$, need to type \verb+\$+,
+        \item \verb+~+ yields a single blank space,
+        \item and etc.
+    \end{itemize}
+\end{frame}
+
+
+\subsection{Git}
+
+\begin{frame}
+    \frametitle{The place to get some Git helps}
+    \begin{center}
+        \href{http://git-scm.com/doc/}{http://git-scm.com/doc/}
+    \end{center}
+\end{frame}
+
+
+
+\newtheorem{POEMbender}{The Blind Men and the Elephant}
+\begin{frame}[fragile]
+    \frametitle{Demo: \LaTeXs + Git}
+    \begin{POEMbender}
+        In-class Group Exercise (Scavenger hunt):
+    \end{POEMbender}
+        \begin{itemize}
+            \item Start up a git folder,
+            \item Create and edit the \texttt{.gitignore} file,
+            \item Download the template for a beamer file,
+            \item Look up the poem from the book,
+            \item One slide per stanza,
+            \item Use \texttt{verse} environment,
+            \item Compile after each stanza,
+            \item Commit after creating each stanza,
+            \item Repeat until done.
+        \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Tutorial: Git}
+
+\begin{lstlisting}
+sudo apt-get install git
+\end{lstlisting}
+
+\begin{figure}[b]
+    \caption{An alternative: \texttt{git gui}}
+    \begin{center}
+        \includegraphics[height=0.6\textheight]{gitguiinstall.png}
+    \end{center}
+    \label{fig:gitgui}
+\end{figure}
+    
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Tutorial: Git}
+
+\vspace{8pt}
+\begin{lstlisting}
+cd ~/
+git clone http://cis.jhu.edu/~nhlee/550400.git
+\end{lstlisting}
+
+\begin{figure}[b]
+    \caption{An alternative: \texttt{git gui}}
+    \begin{center}
+        \includegraphics[height=0.5\textheight]{gitgui.png}
+    \end{center}
+    \label{fig:gitgui2}
+\end{figure}
+    
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Tutorial: Git}
+\begin{lstlisting}
+cd ~/550400
+git reset --hard HEAD
+git pull origin master
+\end{lstlisting}
+\begin{figure}[b]
+    \centering
+    \caption{An alternative: \texttt{git gui}}
+        \includegraphics[height=0.6\textheight]{gitguiusing.png}
+    \label{fig:gitgui4}
+\end{figure}
+\end{frame}
+
+
+
+\begin{frame}[fragile]
+    \frametitle{Tutorial: Git}
+    After years of using git, you might find this funny: 
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{figure}
+                \begin{center}
+                    \includegraphics[width=\textwidth]{images/gitpull.jpg}
+                \end{center}
+            \end{figure}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{lstlisting}
+git pull origin master
+            \end{lstlisting}
+        \end{column}
+    \end{columns} 
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Tutorial: Git}
+    After years of using git, you might find this funny: 
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{figure}
+                \begin{center}
+                    \includegraphics[width=\textwidth]{images/gitpush.jpg}
+                \end{center}
+            \end{figure}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{lstlisting}
+git push origin master
+            \end{lstlisting}
+        \end{column}
+    \end{columns} 
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Tutorial: Git}
+    \begin{columns}
+        \begin{column}{0.4\textwidth}
+            \begin{figure}
+                \caption{For \$19.99, you can also have your own:}
+                \begin{center}
+                    \includegraphics[width=\textwidth]{images/gitrdone.jpg}
+                \end{center}
+            \end{figure}
+        \end{column}
+        \begin{column}{0.6\textwidth}
+\begin{lstlisting}
+cd ~/
+mkdir hub.git
+mkdir computerA.git
+mkdir computerB.git
+
+git init --bare hub.git
+
+cd hub.git
+cd hooks
+cp post-update.sample post-update
+\end{lstlisting}
+        \end{column}
+    \end{columns} 
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Tutorial: Git}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+\begin{lstlisting}
+cd computerA.git
+git init 
+git remote add origin ~/hub.git
+echo 'Hello' >> commonfile.txt
+git add commonfile.txt 
+git pull origin master
+git commit -am 'from A'
+git push origin master
+\end{lstlisting}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+\begin{lstlisting}
+cd computerB.git
+git init 
+git remote add origin ~/hub.git
+echo ' World' >> fileB.txt
+git add commonfile.txt 
+git pull origin master
+git commit -am 'from B'
+git push origin master
+\end{lstlisting}
+        \end{column}
+    \end{columns} 
+\end{frame}
+
+
+\begin{frame}[fragile]
+    \frametitle{Tutorial: Git}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+    \begin{lstlisting}
+cd ~/550400
+
+git gui
+git reset --hard HEAD
+
+git branch personal
+git branch
+git checkout personal
+
+edit some file 
+git status 
+git add . 
+git commit -am 'personal edit'
+
+git checkout master
+git branch -D personal
+    \end{lstlisting}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+    \begin{itemize}
+        \item checks if there has been any change to the folder
+        \item build and update the \texttt{master} git branch
+        \item create and update a \texttt{personal} git branch
+    \end{itemize}
+        \end{column}
+    \end{columns} 
+\end{frame}
+
+
+
+\begin{frame}
+    \frametitle{Tutorial: Git}
+    \texttt{.gitignore}?
+    \vskip0.1in
+    \begin{itemize}
+        \item N.B.~the course folder already has one 
+        \item Use it to let \emph{git} know the files to \emph{ignore} while
+            version controlling
+        \item one particular usage: create \texttt{.gitignore} at the root of
+            your git folder 
+        \item files already been list under the git watch list will not be
+            ignored even after creation of \texttt{.gitignore} 
+    \end{itemize}
+\end{frame}
+
+\subsection{Vim}
+
+\newtheorem{DEFVim}{Vim}
+\begin{frame}
+    \frametitle{Vim}
+    \begin{DEFVim}
+        Vim is a \emph{highly customizable} text editor 
+    \end{DEFVim}
+    \vskip0.1in
+    \begin{enumerate}
+        \item \LaTeX, R, C/C++, Java, Python, Git and etc.
+        \item Regular expression, syntax coloring, autocompletion
+        \item Try Firefox + Wasavi/Vimperator/Vimium
+        \item \texttt{<ESC>}-mode
+        \begin{itemize}
+            \item \texttt{:}-mode, aka., the last line mode
+            \item \texttt{i}-mode, aka., the insert mode
+        \end{itemize}
+    \end{enumerate}
+\end{frame}
+
+\subsection{R}
+
+\begin{frame}[fragile]
+    \frametitle{Demo: R + \LaTeX}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{figure}
+                \centering
+            \caption{R Studio}
+            \href{http://rstudio.org}{
+            \includegraphics[width=\textwidth]{images/Rstudio}
+            }
+        \end{figure}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{figure}
+                \centering
+                        \caption{R}
+                    \href{http://www.r-project.org}{
+                        \includegraphics[width=\textwidth]{images/Rproject}}
+            \end{figure}
+        \end{column}
+    \end{columns} 
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Demo: R + \LaTeX}
+    \begin{columns}
+        \begin{column}{0.45\textwidth}
+    \begin{lstlisting}
+install.packages(faraway)
+install.packages(tikzDevice)
+require(faraway)
+require(tikzDevice)
+data(eco)
+tikz('embeddedfig1.tex', 
+    standAlone=F, 
+    width=5,height=5)
+plot(income ~ usborn, 
+    data=eco,
+    xlab=`Proportion US born'
+    ylab=`Mean Annual Income'
+    )
+dev.off()
+    \end{lstlisting}
+        \end{column}
+        \begin{column}{0.55\textwidth}
+        \begin{figure}[0.8\textwidth]
+            \input{images/embeddedfig1.tex}
+        \end{figure}
+        \end{column}
+    \end{columns} 
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Demo: R + \LaTeX}
+    \begin{columns}
+        \begin{column}{0.45\textwidth}
+            \begin{lstlisting}
+tikz('embeddedfig2.tex', 
+    standAlone=F, 
+    width=5,height=5)
+plot(income ~ usborn, 
+    data = eco,
+    xlab=`Proportion US born',
+    ylab=`Mean Annual Income',
+    xlim=c(0,1),
+    ylim=c(15000,70000),
+    xaxs='i')
+g<-lm(income~usborn,eco)
+abline(coef(g))
+dev.off()
+            \end{lstlisting}
+        \end{column}
+        \begin{column}{0.55\textwidth}
+            \input{images/embeddedfig2.tex}
+        \end{column}
+    \end{columns} 
+\end{frame}
