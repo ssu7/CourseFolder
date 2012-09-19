@@ -1,8 +1,8 @@
 \documentclass[hyperref={colorlinks=false},compress,handout,10pt]{beamer}
 
 \usepackage{tikz}
-%\usepackage{handoutWithNotes}
-%\pgfpagesuselayout{4 on 1 with notes}[a4paper,border shrink=5mm]
+\usepackage{handoutWithNotes}
+\pgfpagesuselayout{4 on 1 with notes}[a4paper,border shrink=5mm]
 
 \newlength{\wideitemsep}
 \setlength{\wideitemsep}{\itemsep}
@@ -179,9 +179,18 @@ Dr.~N.~H.~Lee \\
     \end{itemize}
 \end{frame}
 
-\input{Aclassinfo.tex}
-\input{Bmathmodeling.tex}
-\input{Cexamples.tex}
-\input{Dtutorials.tex}
+\begin{frame}[fragile]
+    \frametitle{Tutorial: \LaTeXs}
+    How to make slides with notes:
+    \begin{lstlisting}
+\usepackage{handoutWithNotes}
+\pgfpagesuselayout{4 on 1 with notes}[a4paper,border shrink=5mm]
+    \end{lstlisting}
+\end{frame}
+
+%\input{Aclassinfo.tex}
+%\input{Bmathmodeling.tex}
+%\input{Cexamples.tex}
+%\input{Dtutorials.tex}
 
 \end{document}
