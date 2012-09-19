@@ -1,5 +1,8 @@
 \documentclass[hyperref={colorlinks=false},compress,handout,10pt]{beamer}
 
+\usepackage{handoutWithNotes}
+\pgfpagesuselayout{3 on 1 with notes}[border shrink=5mm]
+
 \usepackage{tikz}
 %\usepackage[active,tightpage,psfixbb]{preview}
 %\PreviewEnvironment{pgfpicture}
@@ -36,13 +39,13 @@
 %    fill=black,circle}%
 %}
 
+%\usetheme{Berlin}
 \usetheme{Singapore}
 \usecolortheme{lily}
 %\usecolortheme[rgb={0,0.17,0.45}]{structure} 
 %\usecolortheme[rgb={.855,.647,.125}]{structure} 
 \usefonttheme[onlymath]{serif}
 
-%\usepackage{beamerarticle}
 \usepackage{listings}
 \lstset{
 basicstyle=\footnotesize\ttfamily,
@@ -142,27 +145,59 @@ Dr.~N.~H.~Lee \\
 \begin{frame}%[allowframebreaks]
     \frametitle{Today's Lesson Plan}
     \begin{enumerate}
-        \item WMA Problem Set 2.5a, 2.6a, 2.8a, 2.9
-        \item IMM Problem Set 1.1, 1.5, 1.8
+        \item Share Your Favoriates: WMA Chapter 2
+        \item Share Your Favoriates: IMM Chapter 1
         \item Work Statement: 
             \begin{itemize}
-                \item Mission: Impossible
                 \item An example motivated by the bicycle problem
             \end{itemize}
         \item Fair Play
              \begin{itemize}
                  \item Is Tennis Fair? 
-                 \item Is Baseball Fair?
              \end{itemize}
-    \end{enumerate} \end{frame}
+    \end{enumerate} 
+\end{frame}
 
-\input{Aclassinfo.tex}
+\begin{frame}
+    \frametitle{Resume HW}
+    Common Problems:
+    \begin{itemize}
+        \item 1 page only! means 1 page only
+        \item Use a darker color
+        \item Typos; \texttt{.edu} $\neq$ \texttt{.eud}
+        \item No need for GPA 
+    \end{itemize}
+\end{frame}
 
-\input{Bmathmodeling.tex}
+\begin{frame}
+    \frametitle{Work Statement}
+    \begin{center}
+    \href{http://www.ipam.ucla.edu/programs/rips2002/rips2002_projects.html}{Work Statement Examples}
+    \end{center}
+    \begin{description}
+        \item[\quad] See \emph{Protein Pathways} Project Work Statement 
+    \end{description}
+\end{frame}
 
-\input{Cexamples.tex}
+\begin{frame}
+    \frametitle{Is Tennis Fair?}
+    Review of our work done last time. 
+    \begin{itemize}
+        \item What is tennis (for our mathematical modeling purpose)? 
+        \item What was assumed to be ignored? 
+        \item How was the server's advantage modeled? 
+        \item What did we do to simplify our model? 
+        \item Is there a ``generalized'' rule that models the tennis set
+            winning determination? 
+    \end{itemize}
+\end{frame}
 
-\input{Dtutorials.tex}
+%\usepackage{handoutWithNotes}
+%\pgfpagesuselayout{4 on 1 with notes}
+%\input{Aclassinfo.tex}
+%\input{Bmathmodeling.tex}
+%\input{Cexamples.tex}
+%\input{Dtutorials.tex}
 
 %\begin{frame}[fragile]
 %    \frametitle{Example: Insurance Redlining}
