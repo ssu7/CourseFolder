@@ -1,8 +1,29 @@
-\documentclass[hyperref={colorlinks=false},compress,handout,10pt]{beamer}
+%\documentclass[hyperref={colorlinks=false},compress,handout,10pt]{beamer}
+\documentclass[hyperref={colorlinks=false},handout,10pt]{beamer}
+\usetheme{Singapore} % Berlin
+\usecolortheme{lily}
+\usefonttheme[onlymath]{serif} % What does this do? 
 
+\newcommand{\mygreen}{\color{green!50!black}}
+\newcommand{\myblue}{\color{blue}}
+\newcommand{\myred}{\color{red}}
+\xdefinecolor{titlecolor}{rgb}{.855,.647,.125}
+\setbeamercolor{frametitle}{fg=titlecolor}
+\setbeamerfont{frametitle}{series=\bfseries}
+%\setbeamerfont{headline}{size=\fontsize{9}{1}}
+\setbeamercolor{math text}{fg=green!50!black} % Why is the math text greeen?? 
+\setbeamercolor{normal text in math text}{parent=math text}
+
+\setbeamertemplate{navigation symbols}{} %gets rid of navigation symbols
+%\setbeamertemplate{mini frames}{}
+\setbeamertemplate{footline}[frame number]
+\beamertemplateshadingbackground{blue!5}{yellow!10}
+
+
+\usepackage{graphicx}
 \usepackage{tikz}
-\usepackage{handoutWithNotes}
-\pgfpagesuselayout{4 on 1 with notes}[a4paper,border shrink=5mm]
+%\usepackage{handoutWithNotes}
+%\pgfpagesuselayout{4 on 1 with notes}[a4paper,border shrink=5mm]
 
 \newlength{\wideitemsep}
 \setlength{\wideitemsep}{\itemsep}
@@ -13,11 +34,6 @@
 
 \def\LaTeXs{\LaTeX\ }
 
-%\usepackage{pgfplots}
-%\usepackage{ifthen}
-
-%%%<
-%\usepackage{verbatim}
 %\usetikzlibrary{calc,fadings,decorations.pathreplacing,backgrounds}
 %% helper macros
 %\tikzset{variable/.default=}  
@@ -35,17 +51,12 @@
 %    fill=black,circle}%
 %}
 
-%\usetheme{Berlin}
-\usetheme{Singapore}
-\usecolortheme{lily}
-%\usecolortheme[rgb={0,0.17,0.45}]{structure} 
-%\usecolortheme[rgb={.855,.647,.125}]{structure} 
-\usefonttheme[onlymath]{serif}
+
 
 \usepackage{listings}
 \lstset{
 basicstyle=\footnotesize\ttfamily,
-%numbers=left,
+numbers=left,
 frame=bottomline,
 framextopmargin=50pt,
 }
@@ -55,50 +66,17 @@ framextopmargin=50pt,
 
 
 \usepackage{float}
-\floatstyle{boxed}
-\usepackage{colortbl}
+\floatstyle{boxed} % What does this do? 
 \usepackage{mathpazo}
-%\usepackage[small]{eulervm}
-%\usepackage[tiling]{pst-fill}
-%\usepackage{geometry}
-\usepackage{graphicx}
 \usepackage{movie15}
 \usepackage{bm}
-\usepackage{verbatim}
-\usepackage{comment}
+%\usepackage{comment} % What does this do? 
 \usepackage{caption}
 \usepackage{subcaption}
 \captionsetup[subfigure]{labelformat=empty}
 \captionsetup[figure]{labelformat=empty}
 \graphicspath{{./images/}}
 
-\newcommand{\mygreen}{\color{green!50!black}}
-\newcommand{\myblue}{\color{blue}}
-\newcommand{\myred}{\color{red}}
-\newcommand{\mycolor}{\color{red}{c}\color{blue}{o}\color{green}{l}\color{orange}{o}\color{cyan}{r}}
-\newcommand{\mysize}{\scriptsize{s}\small{i}\normalsize{z}\Large{e}}
-\newcommand{\myshape}{\textcircled{s}\textit{h}\texttt{a}\textsf{p}\textsc{e}}
-
-\newcommand{\E}{\mathcal{E}}
-\newcommand{\A}{\mathcal{A}}
-\newcommand{\mb}{\mathbf}
-
-\newcounter{cnt}
-\setcounter{cnt}{0}
-
-
-%\setbeamercolor*{titlelike}{parent=palette tertiary} 
-\xdefinecolor{titlecolor}{rgb}{.855,.647,.125}
-%\setbeamercolor{titlelike}{parent=titlecolor}
-\setbeamercolor{frametitle}{fg=titlecolor}
-\setbeamerfont{frametitle}{series=\bfseries}
-\setbeamercolor{math text}{fg=green!50!black}
-\setbeamercolor{normal text in math text}{parent=math text}
-
-\setbeamertemplate{navigation symbols}{} %gets rid of navigation symbols
-\setbeamertemplate{mini frames}{}
-\setbeamertemplate{footline}[frame number]
-\beamertemplateshadingbackground{blue!5}{yellow!10}
 
 \title{{\color{blue} \LARGE 550.400: Mathematical Modeling and Consulting\newline} }
 
@@ -110,9 +88,6 @@ Dr.~N.~H.~Lee \\
     \vspace{5pt}
 } 
 \institute{JHU AMS 2012 FALL}
-
-
-%\date{\mygreen \today} % \\ Sparks, Nevada}
 
 \date{\mygreen Last Compiled on \today} 
 
@@ -128,20 +103,15 @@ Dr.~N.~H.~Lee \\
   \tableofcontents
 \end{frame}
 
-\section{Today's Lesson Plan}
+\section{Lesson Plan}
 \begin{frame}%[allowframebreaks]
     \frametitle{Today's Lesson Plan}
     \begin{enumerate}
         \item Share Your Favoriates: WMA Chapter 2
         \item Share Your Favoriates: IMM Chapter 1
-        \item Work Statement: 
-            \begin{itemize}
-                \item An example motivated by the bicycle problem
-            \end{itemize}
-        \item Fair Play
-             \begin{itemize}
-                 \item Is Tennis Fair? 
-             \end{itemize}
+        \item Work Statement Example
+        \item Is Tennis Fair?
+        \item How to sync two git local folders
     \end{enumerate} 
 \end{frame}
 
@@ -149,10 +119,12 @@ Dr.~N.~H.~Lee \\
     \frametitle{Resume HW}
     Common Problems:
     \begin{itemize}
-        \item 1 page only! means 1 page only
-        \item Use a darker color
+        \item 1 page only means 1 page only
+        \item Use the template! mean use the template
         \item Typos; \texttt{.edu} $\neq$ \texttt{.eud}
         \item No need for GPA 
+        \item No facebook link
+        \item Use a darker color
     \end{itemize}
 \end{frame}
 
@@ -176,21 +148,15 @@ Dr.~N.~H.~Lee \\
         \item What did we do to simplify our model? 
         \item Is there a ``generalized'' rule that models the tennis set
             winning determination? 
+        \item Who could be your sponsor/client? (Try \href{http://www.usta.com/About-USTA/?intloc=headernav}{USTA})
     \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]
-    \frametitle{Tutorial: \LaTeXs}
-    How to make slides with notes:
-    \begin{lstlisting}
-\usepackage{handoutWithNotes}
-\pgfpagesuselayout{4 on 1 with notes}[a4paper,border shrink=5mm]
-    \end{lstlisting}
-\end{frame}
 
 %\input{Aclassinfo.tex}
-%\input{Bmathmodeling.tex}
+\input{Bmathmodeling.tex}
 %\input{Cexamples.tex}
 %\input{Dtutorials.tex}
+%\input{Exercises.tex}
 
 \end{document}
