@@ -1,12 +1,8 @@
 \documentclass[hyperref={colorlinks=false},compress,handout,10pt]{beamer}
 
-\usepackage{handoutWithNotes}
-\pgfpagesuselayout{3 on 1 with notes}[border shrink=5mm]
-
 \usepackage{tikz}
-%\usepackage[active,tightpage,psfixbb]{preview}
-%\PreviewEnvironment{pgfpicture}
-%\setlength\PreviewBorder{0pt}
+%\usepackage{handoutWithNotes}
+%\pgfpagesuselayout{4 on 1 with notes}[a4paper,border shrink=5mm]
 
 \newlength{\wideitemsep}
 \setlength{\wideitemsep}{\itemsep}
@@ -17,8 +13,8 @@
 
 \def\LaTeXs{\LaTeX\ }
 
-\usepackage{pgfplots}
-\usepackage{ifthen}
+%\usepackage{pgfplots}
+%\usepackage{ifthen}
 
 %%%<
 %\usepackage{verbatim}
@@ -58,13 +54,13 @@ framextopmargin=50pt,
 \usepackage{amsmath,amsthm,amssymb}
 
 
-
 \usepackage{float}
 \floatstyle{boxed}
 \usepackage{colortbl}
 \usepackage{mathpazo}
 %\usepackage[small]{eulervm}
 %\usepackage[tiling]{pst-fill}
+%\usepackage{geometry}
 \usepackage{graphicx}
 \usepackage{movie15}
 \usepackage{bm}
@@ -74,14 +70,7 @@ framextopmargin=50pt,
 \usepackage{subcaption}
 \captionsetup[subfigure]{labelformat=empty}
 \captionsetup[figure]{labelformat=empty}
-%\usepackage[hang,nooneline]{subfigure}
-%\usepackage[nooneline]{subfigure}
-%\usepackage[OT2,T1]{fontenc}
-%\usepackage{pgf,pgfarrows,pgfautomata,pgfheaps,pgfnodes,pgfshade}
-%\usepackage{animate}
-%\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
 \graphicspath{{./images/}}
-%\renewcommand{\thesubfigure}{}
 
 \newcommand{\mygreen}{\color{green!50!black}}
 \newcommand{\myblue}{\color{blue}}
@@ -103,9 +92,7 @@ framextopmargin=50pt,
 %\setbeamercolor{titlelike}{parent=titlecolor}
 \setbeamercolor{frametitle}{fg=titlecolor}
 \setbeamerfont{frametitle}{series=\bfseries}
-%\setbeamercolor{frame title alerted}{use=alerted text,fg=titlecolor,bg=alerted text.fg!75!bg}
-%\setbeamercolor{frame title example}{use=example text,fg=titlecolor,bg=example text.fg!75!bg}
-%\setbeamercolor{math text}{fg=green!50!black}
+\setbeamercolor{math text}{fg=green!50!black}
 \setbeamercolor{normal text in math text}{parent=math text}
 
 \setbeamertemplate{navigation symbols}{} %gets rid of navigation symbols
@@ -172,7 +159,7 @@ Dr.~N.~H.~Lee \\
 \begin{frame}
     \frametitle{Work Statement}
     \begin{center}
-    \href{http://www.ipam.ucla.edu/programs/rips2002/rips2002_projects.html}{Work Statement Examples}
+        \href{http://www.ipam.ucla.edu/programs/rips2002/rips2002_projects.html}{Work Statement Examples}
     \end{center}
     \begin{description}
         \item[\quad] See \emph{Protein Pathways} Project Work Statement 
@@ -192,29 +179,9 @@ Dr.~N.~H.~Lee \\
     \end{itemize}
 \end{frame}
 
-%\usepackage{handoutWithNotes}
-%\pgfpagesuselayout{4 on 1 with notes}
-%\input{Aclassinfo.tex}
-%\input{Bmathmodeling.tex}
-%\input{Cexamples.tex}
-%\input{Dtutorials.tex}
-
-%\begin{frame}[fragile]
-%    \frametitle{Example: Insurance Redlining}
-%\begin{lstlisting}
-%data(chredlin);
-%chredlin;
-%head(chredlin);
-%summary(chredlin);
-%par(mfrow=c(1,1));
-%pairs(chredlin);
-%summary(lm(involact ~ race, chredlin));
-%plot(involact ~ race, chredlin);
-%abline(lm(involact ~ race, chredlin));
-%plot(fire ~ race, chredlin);
-%abline(lm(fire ~ race, chredlin));
-%\end{lstlisting}
-%\end{frame}
-
+\input{Aclassinfo.tex}
+\input{Bmathmodeling.tex}
+\input{Cexamples.tex}
+\input{Dtutorials.tex}
 
 \end{document}
