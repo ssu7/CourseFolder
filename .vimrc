@@ -8,9 +8,6 @@ set showcmd
 set title
 set incsearch
 
-let vimrplugin_underscore = 0
-
-
 imap <C-b> <Plug>Tex_MathBF
 imap <C-c> <Plug>Tex_MathCal
 imap <C-l> <Plug>Tex_LeftRight
@@ -23,7 +20,7 @@ let g:explVertical=1
 let g:explSplitRight=1
 let g:explStartRight=0
 
-colorscheme torte
+colorscheme delek
 "set transparency=20
 
 set laststatus=2
@@ -51,21 +48,9 @@ let g:Tex_CompileRule_pdf = 'pdflatex -interaction=nonstopmode $*'
 "let g:Tex_CompileRule_pdf = 'xelatex -interaction=nonstopmode $*'
 let g:Tex_MultipleCompileFormats = 'pdf'
 let g:Tex_ViewRule_pdf = 'open -a Preview.app' 
+let g:Tex_ViewRule_pdf = 'AcroRd32'
 let g:Tex_GotoError = 0
 set iskeyword+=:
-
-let vimrplugin_term = 'xterm'
-let vimrplugin_tmux = 1
-let vimrplugin_applescript = 0
-let vimrplugin_screenplugin = 0
-let vimrplugin_screenvsplit = 1
-let g:ScreenImpl = "Tmux"
-let vimrplugin_listmethods=1
-"let r_syntax_folding=1
-let vimrplugin_routmorecolors=1
-let vimrplugin_latexcmd = "R CMD pdflatex"
-
-"autocmd BufRead,BufNewFile *.Rnw set filetype=tex
 
 let g:Tex_IgnoredWarnings = 
     \"Underfull\n".
@@ -106,4 +91,3 @@ set statusline +=%1*%=%5l%*             "current line
 set statusline +=%2*/%L%*               "total lines
 set statusline +=%1*%4v\ %*             "virtual column number
 set statusline +=%2*0x%04B\ %*          "character under cursor
-set statusline +=%{fugitive#statusline()}

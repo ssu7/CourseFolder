@@ -114,7 +114,7 @@ Dr.~N.~H.~Lee \\
     \vskip0.1in
     \begin{enumerate}
         \item \LaTeX, R, C/C++, Java, Python, Git and etc.
-        \item Regular expression, syntax coloring, autocompletion
+        \item Regular expression, syntax coloring, auto-completion
         \item \texttt{<ESC>}-mode
         \begin{itemize}
             \item \texttt{:}-mode, aka., the last line mode
@@ -129,12 +129,15 @@ Dr.~N.~H.~Lee \\
     \begin{itemize}
         \item Download \& Install GVim or MacVim
         \item Download \& Install tetris.vim
+        \item Download \& Install minibufexpl.vim
         \item Download \& Install Gundo 
+        \item Download \& Install Vim-LaTeX
     \end{itemize}
 \end{frame}
 
+
 \begin{frame}
-    \frametitle{Tutorial: Vim}
+    \frametitle{Vim}
     \begin{figure}
         \begin{center}
             \includegraphics[width=\textwidth]{images/vi-vim-tutorial-1.png}
@@ -143,71 +146,6 @@ Dr.~N.~H.~Lee \\
 \end{frame}
 
 \subsection{Git} 
-\begin{frame}[allowframebreaks,fragile]
-    \frametitle{Intro.\ to Using Git for Off-Line Teamwork}
-    Places to set up a git for your group work: 
-    \begin{itemize}
-        \item Git Hub
-        \item Dropbox
-    \end{itemize}
-    Why does it matter?
-    \begin{itemize}
-        \item It allows you to collaborate with others off-line
-        \item You leave a trail of your contributions to the project
-    \end{itemize}
-    \begin{block}
-        {In-Class Activities for setting up a github account}
-        \begin{itemize}
-            \item go to github.com
-            \item initiate a git project from github
-            \item set up your local folder 
-            \item populate the folder with new contents
-        \end{itemize}
-    \end{block}
-    \begin{figure}
-        \begin{center}
-            \includegraphics[width=\textwidth]{images/gitmergeexample.png}
-        \end{center}
-    \end{figure}
-    \begin{lstlisting}
-git branch alice 
-git checkout alice
-git remote add altorigin git://git.com/do/not/copy/and/paste/this
-git push origin alice
-git branch -D alice
-    \end{lstlisting}
-\end{frame}
-
-\begin{frame}[fragile]
-    \frametitle{Focus Problem}
-    \begin{itemize}
-        \item Objective: your own copy of the poem
-        \item Rule 1: You write one stanza of the poem into the
-            \texttt{main.tex} file
-        \item Rule 2: You can collect all the others only by using the following
-            commands:
-            \begin{lstlisting}
-git remote 
-git pull 
-git push
-git fetch 
-git merge
-            \end{lstlisting}
-    \end{itemize}
-\end{frame}
-
-\begin{frame}[allowframebreaks,fragile]
-    \frametitle{Adv. Git Mehod for Off-Line Teamwork}
-    \begin{lstlisting}
-git format-patch master~2..master
-    \end{lstlisting}
-    \begin{figure}
-        \begin{center}
-            \includegraphics[width=0.8\textwidth]{images/gitformatpatch.png}
-        \end{center}
-    \end{figure}
-\end{frame}
-
 \begin{frame}[allowframebreaks]
     \frametitle{Git Exercise}
     \begin{figure}
@@ -234,6 +172,86 @@ git format-patch master~2..master
     
 \end{frame}
 
+
+\begin{frame}[fragile]
+    \frametitle{Focus Problem}
+    \begin{itemize}
+        \item Objective: your own copy of the poem
+        \item Rule 1: You write one stanza of the poem into the
+            \texttt{main.tex} file
+        \item Rule 2: You can collect all the others only by using the following
+            commands:
+        \begin{lstlisting}
+git remote 
+git pull 
+git push
+git fetch 
+git merge
+        \end{lstlisting}
+    \end{itemize}
+    
+\end{frame}
+
+\begin{frame}[allowframebreaks,fragile]
+    \frametitle{Intro.\ to Using Git for Off-Line Teamwork}
+    Places to set up a git for your group work: 
+    \begin{itemize}
+        \item Git Hub
+        \item Dropbox
+    \end{itemize}
+    Why does it matter?
+    \begin{itemize}
+        \item It allows you to collaborate with others off-line
+        \item You leave a trail of your contributions to the project
+    \end{itemize}
+    \begin{block}
+        {In-Class Activities for setting up a github account}
+        \begin{itemize}
+            \item go to github.com
+            \item initiate a git project from github
+            \item set up your local folder 
+            \item populate the folder with new contents
+        \end{itemize}
+    \end{block}
+    \begin{figure}
+        \begin{center}
+            \includegraphics[width=0.8\textwidth]{images/gitmergeexample.png}
+        \end{center}
+    \end{figure}
+    \begin{lstlisting}
+git branch alice 
+git checkout alice
+git remote add altorigin git://git.com/do/not/copy/and/paste/this
+git push origin alice
+git branch -D alice
+    \end{lstlisting}
+
+    \begin{lstlisting}
+git://github.com/nhlee/550400.stanza1.git 
+git://github.com/nhlee/550400.stanza2.git 
+git://github.com/nhlee/550400.stanza3.git 
+git://github.com/nhlee/550400.stanza4.git 
+git://github.com/nhlee/550400.stanza5.git 
+git://github.com/nhlee/550400.stanza6.git 
+git://github.com/nhlee/550400.stanza7.git 
+git://github.com/nhlee/550400.stanza8.git 
+    \end{lstlisting}
+\end{frame}
+
+
+\begin{frame}[allowframebreaks,fragile]
+    \frametitle{Adv. Git Mehod for Off-Line Teamwork}
+    \begin{lstlisting}
+git format-patch master~2..master
+    \end{lstlisting}
+    \begin{figure}
+        \begin{center}
+            \includegraphics[width=0.7\textwidth]{images/gitformatpatch.png}
+        \end{center}
+    \end{figure}
+\end{frame}
+
+
 \begin{frame}[fragile,allowframebreaks]
     \frametitle{Using R to do System Admin Stuff}
     \begin{lstlisting}
@@ -253,7 +271,7 @@ for(itr in 1:8) {
         \item lots of things are done through function 
         \item \texttt{paste} and \texttt{system} are functions that \ldots 
         \item functions has none or more arguments 
-        \item arguments are implicitly ordered but the order can be overriden
+        \item arguments are implicitly ordered but the order can be overridden
     \end{itemize}
     \begin{lstlisting}
 system(`ls -ld .*')
@@ -276,7 +294,7 @@ system(`cat .vimrc')
 
 \subsection{\LaTeX}
 \begin{frame}[allowframebreaks,fragile]
-    \frametitle{Intro.\ to workstatement template}
+    \frametitle{Intro.\ to work-statement template}
     \begin{lstlisting}
 \documentclass[12pt,letterpaper][aritcle]
 \usepackage{amsmath,amsthm,amssymb,amsfonts} # for popular math add-on
@@ -416,7 +434,9 @@ y <- mu + rnorm(1000)
 adf.test(x)$p.value
 adf.test(y)$p.value
 po.test(cbind(x,y))
+    \end{lstlisting}
 
+    \begin{lstlisting}
 po.test(cbind(xrates$UK,xrates$EU))
 ukeu.lm <- lm(xrates$UK ~ xrates$EU)
 ukeu.res <- resid(ukeu.lm)
@@ -442,16 +462,16 @@ system('R CMD install MYPAC')
 
 \subsection{Math Model Building}
 
-
-
-
-
-
 \begin{frame}
-    \frametitle{A brain-teaser}
-  ``To encourage Elmer's promising tennis career, his father offers him a prize
-  if he wins (at least) two tennis sets in a row in a three-set series to be
-  played with his father''
+    \frametitle{A Word Problem}
+    \begin{verse} 
+        To encourage Elmer's promising tennis career, his father offers him a
+        prize if he wins (at least) two tennis sets in a row in a three-set
+        series to be played with his father and the club  champion
+        alternately: father-champion-father or champion-father-champion,
+        according to Elmer's choice. The champion is a better player than
+        Elmer's father. Which series should Elmer choose?
+    \end{verse}
   \vskip0.1in
   \begin{itemize}
       \item What is that you wish to know?
