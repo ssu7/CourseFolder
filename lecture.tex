@@ -1,7 +1,7 @@
 %\documentclass[hyperref={colorlinks=false},compress,handout,10pt]{beamer}
 \documentclass[hyperref={colorlinks=false},handout,10pt]{beamer}
 \usetheme{Singapore} % Berlin
-\usecolortheme{lily}
+\usecolortheme{lily} %{wolverine} %lily
 \usefonttheme[onlymath]{serif} % What does this do? 
 
 \newcommand{\mygreen}{\color{green!50!black}}
@@ -22,8 +22,8 @@
 
 \usepackage{graphicx}
 \usepackage{tikz}
-%\usepackage{handoutWithNotes}
-%\pgfpagesuselayout{4 on 1 with notes}[a4paper,border shrink=2mm]
+\usepackage{handoutWithNotes}
+\pgfpagesuselayout{4 on 1 with notes}[a4paper,border shrink=2mm]
 
 \newlength{\wideitemsep}
 \setlength{\wideitemsep}{\itemsep}
@@ -103,41 +103,264 @@ Dr.~N.~H.~Lee \\
   \tableofcontents
 \end{frame}
 
-\section{Lesson Plan}
-\begin{frame}%[allowframebreaks]
-    \frametitle{Today's Lesson Plan}
-    \begin{enumerate}
-        \item Share Your Favoriates: WMA Chapter 2
-        \item Share Your Favoriates: IMM Chapter 1
-        \item Share Your Project Idea \& Who would be your client/sponsor?
-        \item Is Tennis Fair?
-        \item Work Statement Example
-        \item How to sync two git local folders
-    \end{enumerate} 
+\begin{frame}[allowframebreaks,fragile]
+    \frametitle{Intro.\ to Using Git for Off-Line Teamwork}
+    Places to set up a git for your group work: 
+    \begin{itemize}
+        \item Git Hub
+        \item Dropbox
+    \end{itemize}
+    Why does it matter?
+    \begin{itemize}
+        \item It allows you to collaborate with others off-line
+        \item You leave a trail of your contributions to the project
+    \end{itemize}
+    \begin{block}
+        {In-Class Activities for setting up a github account}
+        \begin{itemize}
+            \item go to github.com
+            \item initiate a git project from github
+            \item set up your local folder 
+            \item populate the folder with new contents
+        \end{itemize}
+    \end{block}
+    \begin{figure}
+        \begin{center}
+            \includegraphics[width=\textwidth]{images/gitmergeexample.png}
+        \end{center}
+    \end{figure}
+    \begin{lstlisting}
+git branch alice 
+git checkout alice
+git remote add altorigin git://git.com/do/not/copy/and/paste/this
+git push origin alice
+git branch -D alice
+    \end{lstlisting}
 \end{frame}
 
-\begin{frame}
-    \frametitle{Resume HW}
-    Common Problems:
+\begin{frame}[fragile]
+    \frametitle{Focus Problem}
     \begin{itemize}
-        \item Liked ``quotes''
-        \item 1 page only means 1 page only
-        \item Use the template! mean use the template
-        \item Typos; \texttt{.edu} $\neq$ \texttt{.eud}
-        \item No need for GPA 
-        \item No facebook link
-        \item Use a darker color
+        \item Objective: your own copy of the poem
+        \item Rule 1: You write one stanza of the poem into the
+            \texttt{main.tex} file
+        \item Rule 2: You can collect all the others only by using the following
+            commands:
+            \begin{lstlisting}
+git remote 
+git pull 
+git push
+git fetch 
+git merge
+            \end{lstlisting}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[allowframebreaks,fragile]
+    \frametitle{Adv. Git Mehod for Off-Line Teamwork}
+    \begin{lstlisting}
+git format-patch master~2..master
+    \end{lstlisting}
+    \begin{figure}
+        \begin{center}
+            \includegraphics[width=0.8\textwidth]{images/gitformatpatch.png}
+        \end{center}
+    \end{figure}
+\end{frame}
+
+\begin{frame}[allowframebreaks]
+    \frametitle{Git Exercise}
+    \begin{figure}
+        \begin{center}
+            \includegraphics[width=\textwidth]{images/gitmergehistory.png}
+        \end{center}
+    \end{figure}
+    \begin{block}{Create a git folder with the following history}
+         \begin{itemize}
+             \item Each node's label signifies the commit 
+             \item The folder contains only one single file \texttt{main.txt}
+                 throughout the history
+             \item KISS (See WMA for its meaning)
+         \end{itemize}
+    \end{block}
+    \begin{block}{Class Exercise}
+        Collect all 8 stanzas together with your neighbor.
+        \begin{itemize}
+            \item You do four of them 
+            \item Your teammate do four of them
+            \item Then, you combine yours with your teammate's
+        \end{itemize}
+    \end{block}
+    
+\end{frame}
+
+\begin{frame}[allowframebreaks,fragile]
+    \frametitle{Introduction to beamer}
+    Basic Body Layer
+    \begin{lstlisting}
+\begin{document}
+\section{Hello World} 
+    \subsection{hello world}
+        \begin{frame}
+            \frametitle{hi world}
+            \begin{columns}
+                \begin{column}{0.5\textwidth}
+                    \begin{itemize}
+                        \item Alice!
+                    \end{itemize}
+                \end{column}
+                \begin{column}{0.5\textwidth}
+                    \begin{block}{hey world}
+                        Bob!
+                    \end{block}
+                \end{column}
+            \end{columns} 
+        \end{frame}
+\end{document}
+    \end{lstlisting}
+    Basic Preambles 
+\begin{lstlisting}
+\documentclass[hyperref={colorlinks=false},handout,10pt]{beamer}
+\usetheme{Singapore}
+\usecolortheme{lily}
+\usefonttheme[onlymath]{serif} % What does this do? 
+\end{lstlisting}    
+    OR
+\begin{lstlisting}
+\documentclass[hyperref={colorlinks=false},handout,10pt]{beamer}
+\usetheme{Berlin}
+\usecolortheme{wolverine}
+\usefonttheme[onlymath]{serif} % What does this do? 
+\end{lstlisting}    
+    For a more complete array of themes, go to: 
+    \begin{center}
+        \href{http://www.hartwork.org/beamer-theme-matrix/}{http://www.hartwork.org/beamer-theme-matrix/}
+    \end{center}
+SO, how to put a code in the slide? and it looks like codes? 
+\begin{columns}
+    \begin{column}{0.5\textwidth}
+    \begin{verbatim}
+\begin{lstlisting}
+require(tikzDevice)
+x = rnorm(100)
+plot.ts(x)
+dev.off()
+\end{lstlisting}
+    \end{verbatim}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+\begin{lstlisting}
+require(tikzDevice)
+x = rnorm(100)
+plot.ts(x)
+dev.off()
+\end{lstlisting}
+    \end{column}
+\end{columns} 
+But, this requires the following in the preamble portion 
+of your tex file:
+\begin{verbatim}
+\usepackage{listings}
+\lstset{
+basicstyle=\footnotesize\ttfamily,
+numbers=left,
+frame=bottomline,
+framextopmargin=50pt,
+}
+\end{verbatim}
+\end{frame}
+
+
+\begin{frame}[fragile,allowframebreaks]
+    \frametitle{Using R to do System Admin Stuff}
+    \begin{lstlisting}
+for(itr in 1:8) {
+    stanzaname = paste("stanza",itr,sep="")
+    gitaddress = paste("git://github.com/nhlee/550400.",
+                            stanzaname,".git",sep="")
+    bashcommand = paste("git remote add ",
+                            stanzaname," ",gitaddress,sep="")
+    system(bashcommand)
+}
+    \end{lstlisting}
+    \begin{itemize}
+        \item \texttt{1:8} creates a vector that \ldots 
+        \item \texttt{X = 1} assigns 1 to X 
+        \item \texttt{X <- 1} also assigns 1 to X
+        \item lots of things are done through function 
+        \item \texttt{paste} and \texttt{system} are functions that \ldots 
+        \item functions has none or more arguments 
+        \item arguments are implicitly ordered but the order can be overriden
     \end{itemize}
 \end{frame}
 
 
+\begin{frame}
+    \frametitle{A brain-teaser}
+  ``To encourage Elmer's promising tennis career, his father offers him a prize
+  if he wins (at least) two tennis sets in a row in a three-set series to be
+  played with his father''
+  \vskip0.1in
+  \begin{itemize}
+      \item What is that you wish to know?
+      \item unimportant, exogenous, and endogenous?
+      \item if the model fits the situation, will we be able to use it? 
+      \item Test the model
+  \end{itemize}
+\end{frame}
 
+\begin{frame}[allowframebreaks]
+    \frametitle{Arguments from Scale}
+    \begin{block} {Cost of Packing}
 
-\input{Aclassinfo.tex}
-\input{Bmathmodeling.tex}
-\input{Cexamples.tex}
-\input{Dtutorials.tex}
-\input{Exercises.tex}
-\input{Fproject.tex}
+    \end{block}
+    \begin{block}{Speed of Racing Shells}
+        
+    \end{block}
+    \begin{block}{Size Effect in Animal}
+        
+    \end{block}
+\end{frame}
+
+\begin{frame}[allowframebreaks,fragile]
+    \frametitle{Spurious Causality}
+    \begin{lstlisting}
+CBE <- read.table('http://www.massey.ac.nz/~pscowper/ts/cbe.dat')
+Ets <- ts(CBE[,3], start = 1958, freq=12)
+Cts <- ts(CBE[,2], start = 1958, freq=12)
+plot(as.vector(aggregate(Cts)),as.vector(aggregate(Ets)))
+    \end{lstlisting}
+    \begin{lstlisting}
+set.seed(10)
+x <- rnorm(100)
+y <- rnorm(100)
+for(i in 2:100) {
+    x[i] <- x[i-1] + rnorm(1)
+    y[i] <- y[i-1] + rnorm(1)
+}
+plot(x,y)
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{How to do software documentation using R}
+     \begin{lstlisting}
+myfun <- function(x) {x^2} 
+package.skeleton(name='MYPAC', 
+                list='myfun',  
+                path='~/')
+#Do the documentation
+system('R CMD check ~/MYPAC')
+system('R CMD build ~/MYPAC')
+system('R CMD install MYPAC')
+     \end{lstlisting}
+\end{frame}
+
+%\input{Aclassinfo.tex}
+%\input{Bmathmodeling.tex}
+%\input{Cexamples.tex}
+%\input{Dtutorials.tex}
+%\input{Exercises.tex}
+%\input{Fproject.tex}
 
 \end{document}
