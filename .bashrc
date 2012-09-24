@@ -2,6 +2,7 @@ source ~/.git-completion.bash
 
 alias vi='/c/Program\ Files/Vim/vim73/gvim.exe'
 alias vii='/c/Program\ Files/Vim/vim73/gvim.exe'
+alias SumatraPDF='/c/Program\ Files/SumatraPDF/SumatraPDF.exe'
 alias ls='ls --color'
 alias open='explorer'
 

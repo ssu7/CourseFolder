@@ -45,10 +45,10 @@ set grepprg=grep\ -nH\ $*
 let g:tex_flavor='latex'
 let g:Tex_DefaultTargetFormat = 'pdf'
 let g:Tex_CompileRule_pdf = 'pdflatex -interaction=nonstopmode $*'
-"let g:Tex_CompileRule_pdf = 'xelatex -interaction=nonstopmode $*'
 let g:Tex_MultipleCompileFormats = 'pdf'
-let g:Tex_ViewRule_pdf = 'open -a Preview.app' 
-let g:Tex_ViewRule_pdf = 'AcroRd32'
+"let g:Tex_ViewRule_pdf = 'open -a Preview.app' 
+let g:Tex_ViewRule_pdf = 'SumatraPDF'
+"let g:Tex_ViewRule_pdf = 'AcroRd32'
 let g:Tex_GotoError = 0
 set iskeyword+=:
 
