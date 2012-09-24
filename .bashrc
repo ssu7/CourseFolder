@@ -2,6 +2,8 @@ source ~/.git-completion.bash
 
 alias vi='/c/Program\ Files/Vim/vim73/gvim.exe'
 alias vii='/c/Program\ Files/Vim/vim73/gvim.exe'
+alias ls='ls --color'
+alias open='explorer'
 
 #PATH=/c/Program\ Files/
 #PATH=/c/Rtools/bin:/c/Rtools/gcc-4.6.3/bin:$PATH
