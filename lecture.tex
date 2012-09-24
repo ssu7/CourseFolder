@@ -16,16 +16,14 @@
 
 \setbeamertemplate{navigation symbols}{} %gets rid of navigation symbols
 %\setbeamertemplate{mini frames}{}
-%\setbeamertemplate{mini frames}{}
-%\setbeamertemplate{mini frames}{}
 \setbeamertemplate{footline}[frame number]
 \beamertemplateshadingbackground{blue!5}{yellow!10}
 
 
 \usepackage{graphicx}
 \usepackage{tikz}
-\usepackage{handoutWithNotes}
-\pgfpagesuselayout{4 on 1 with notes}[a4paper,border shrink=2mm]
+%\usepackage{handoutWithNotes}
+%\pgfpagesuselayout{4 on 1 with notes}[a4paper,border shrink=2mm]
 
 \newlength{\wideitemsep}
 \setlength{\wideitemsep}{\itemsep}
@@ -481,6 +479,21 @@ system('R CMD install MYPAC')
   \end{itemize}
 \end{frame}
 
+\begin{frame}
+    \frametitle{Exogenous \& Endogenous Variables}
+    \begin{block}
+        {Endogenous Variable}
+        The things that the model seeks to explain
+    \end{block}
+    \vskip0.1in
+    \begin{block}
+        {Exogenous Variable}
+        Things that affect the model but whose behavior
+        the model is not designed to study
+        AKA.  parameters, inputs, independent variables
+    \end{block}
+\end{frame}
+
 \begin{frame}[allowframebreaks]
     \frametitle{Arguments from Scale}
     \begin{block} {Cost of Packing}
@@ -494,11 +507,11 @@ system('R CMD install MYPAC')
     \end{block}
 \end{frame}
 
-%\input{Aclassinfo.tex}
-%\input{Bmathmodeling.tex}
-%\input{Cexamples.tex}
-%\input{Dtutorials.tex}
-%\input{Exercises.tex}
-%\input{Fproject.tex}
+\input{Aclassinfo.tex}
+\input{Bmathmodeling.tex}
+\input{Cexamples.tex}
+\input{Dtutorials.tex}
+\input{Exercises.tex}
+\input{Fproject.tex}
 
 \end{document}
