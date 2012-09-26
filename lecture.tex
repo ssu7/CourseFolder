@@ -106,12 +106,23 @@ Dr.~N.~H.~Lee \\
   \titlepage
 \end{frame}
 
-\begin{frame}[shrink]
+\begin{frame}%[shrink]
   \frametitle{Outline}
   \tableofcontents
 \end{frame}
 
 \section{FAQ} 
+
+\begin{frame}
+    \frametitle{What is that on the slide?}
+    \begin{center}
+        \Large
+        \href{http://connect.johnshopkins.edu/welcome/}{http://connect.johnshopkins.edu/welcome/}
+\end{center}
+\end{frame}
+
+
+
 
 \begin{frame}[fragile]
     \frametitle{How to add a figure in your work statement?}
@@ -145,14 +156,11 @@ Dr.~N.~H.~Lee \\
 \end{frame}
 
 \begin{frame}
-    \frametitle{Connect to use the web demo}
+    \frametitle{Sorry \ldots but still confused about git \ldots}
     \begin{center}
-        \Large
-        \href{http://connect.johnshopkins.edu/welcome/}{http://connect.johnshopkins.edu/welcome/}
-\end{center}
+        \href{http://gitref.org/index.html}{http://gitref.org/index.html}
+    \end{center}
 \end{frame}
-
-
 
 
 \section{Git} 
@@ -166,13 +174,14 @@ Dr.~N.~H.~Lee \\
         \end{center}
     \end{figure}
     \end{block}
+    \vskip0.5in
     
     \begin{block}{Create a git folder with the following history}
          \begin{itemize}
              \item Each node's label signifies the commit 
              \item The folder contains only one single file \texttt{main.txt}
                  throughout the history
-             \item KISS (See WMA for its meaning)
+             \item Keep ``the story'' simple
              \item Push it to your github (remote) repository
          \end{itemize}
     \end{block}
@@ -196,30 +205,30 @@ git://github.com/nhlee/550400.stanza8.git
 \end{frame}
 
 
-\begin{frame}[allowframebreaks,fragile]
-    \frametitle{Adv. Git Method for Off-Line Teamwork}
-    \begin{figure}
-        \begin{center}
-            \includegraphics[width=0.8\textwidth]{images/gitmergeexample.png}
-        \end{center}
-    \end{figure}
-    \begin{lstlisting}
-git branch alice 
-git checkout alice
-git remote add altorigin git://git.com/do/not/copy/and/paste/this
-git push origin alice
-git branch -D alice
-    \end{lstlisting}
-
-    \begin{lstlisting}
-git format-patch master~2..master
-    \end{lstlisting}
-    \begin{figure}
-        \begin{center}
-            \includegraphics[width=0.7\textwidth]{images/gitformatpatch.png}
-        \end{center}
-    \end{figure}
-\end{frame}
+%\begin{frame}[allowframebreaks,fragile]
+%    \frametitle{Adv. Git Method for Off-Line Teamwork}
+%    \begin{figure}
+%        \begin{center}
+%            \includegraphics[width=0.8\textwidth]{images/gitmergeexample.png}
+%        \end{center}
+%    \end{figure}
+%    \begin{lstlisting}
+%git branch alice 
+%git checkout alice
+%git remote add altorigin git://git.com/do/not/copy/and/paste/this
+%git push origin alice
+%git branch -D alice
+%    \end{lstlisting}
+%
+%    \begin{lstlisting}
+%git format-patch master~2..master
+%    \end{lstlisting}
+%    \begin{figure}
+%        \begin{center}
+%            \includegraphics[width=0.7\textwidth]{images/gitformatpatch.png}
+%        \end{center}
+%    \end{figure}
+%\end{frame}
 
 \section{Causality \& Spurious Correlation}
 
@@ -233,31 +242,28 @@ plot(cbe[,1],cbe[,3]);
     \end{lstlisting}
 
     \begin{lstlisting}
-set.seed(10)
-x <- rnorm(100)
-y <- rnorm(100)
+set.seed(10);
+x <- rnorm(100);
+y <- rnorm(100);
 for(i in 2:100) {
-    x[i] <- x[i-1] + rnorm(1)
-    y[i] <- y[i-1] + rnorm(1)
+    x[i] <- x[i-1] + rnorm(1);
+    y[i] <- y[i-1] + rnorm(1);
 }
-plot(x,y)
+plot(x,y);
     \end{lstlisting}
+    \vskip0.5in
 
     \begin{lstlisting}
-x <- y <- mu <- rep(0,1000)
-for(i in 2:1000) mu[i] <- mu[i-1] + rnorm(1)
-x <- mu + rnorm(1000)
-y <- mu + rnorm(1000)
+x <- y <- mu <- rep(0,1000);
+for(i in 2:1000) mu[i] <- mu[i-1] + rnorm(1);
+x <- mu + rnorm(1000);
+y <- mu + rnorm(1000);
 
 xrate.loc <-'http://www.massey.ac.nz/~pscowper/ts/us_rates.dat';
 xrates <- read.table(xrate.loc,header=T);
 plot(xrates$UK,xrates$EU,pch=4);
     \end{lstlisting}
-
-\end{frame}
-
-\begin{frame}[fragile]
-    \frametitle{Optional Topic}
+    \vskip0.5in
     Then, how to detect the underlying factors? 
     \begin{lstlisting}
 require(tseries)
@@ -321,48 +327,6 @@ the outcome.
     
 \end{frame}
 
-
-\section{R \& Matlab}
-
-\begin{frame}[fragile,allowframebreaks]
-    \frametitle{Using R to do System Admin Stuff}
-    \begin{lstlisting}
-for(itr in 1:8) {
-    stanzaname = paste("stanza",itr,sep="")
-    gitaddress = paste("git://github.com/nhlee/550400.",
-                            stanzaname,".git",sep="")
-    bashcommand = paste("git remote add ",
-                            stanzaname," ",gitaddress,sep="")
-    system(bashcommand)
-}
-    \end{lstlisting}
-    \begin{itemize}
-        \item \texttt{1:8} creates a vector that \ldots 
-        \item \texttt{X = 1} assigns 1 to X 
-        \item \texttt{X <- 1} also assigns 1 to X
-        \item lots of things are done through function 
-        \item \texttt{paste} and \texttt{system} are functions that \ldots 
-        \item functions has none or more arguments 
-        \item arguments are implicitly ordered but the order can be overridden
-    \end{itemize}
-    \begin{lstlisting}
-system(`ls -ld .*')
-system(`cat .Rprofile')
-system(`cat .bashrc')
-system(`cat .gitignore')
-system(`cat .vimrc')
-    \end{lstlisting}
-    \begin{itemize}
-        \item .xxx files are hidden
-        \item ls -ld .* show the hidden files
-        \item .Rprofile set up your R behavior
-        \item .bashrc set up your bash behavior
-        \item .gitignore set up your git behavior 
-        \item .vimrc set up you vim behavior
-        \item these files are equivalent to Preference part of your GUI
-            software
-    \end{itemize}
-\end{frame}
 
 \section{\LaTeX}
 \begin{frame}[allowframebreaks,fragile]
@@ -468,7 +432,7 @@ Where to get more help:
 \end{center}
 \end{frame}
 
-
+\section{R \& Matlab}
 
 \begin{frame}[fragile]
     \frametitle{How to do software documentation (via R)}
@@ -484,10 +448,60 @@ system('R CMD install MYPAC')
      \end{lstlisting}
 \end{frame}
 
+\begin{frame}[fragile,allowframebreaks]
+    \frametitle{Using R to do System Admin Stuff}
+    \begin{lstlisting}
+for(itr in 1:8) {
+    stanzaname = paste("stanza",itr,sep="")
+    gitaddress = paste("git://github.com/nhlee/550400.",
+                            stanzaname,".git",sep="")
+    bashcommand = paste("git remote add ",
+                            stanzaname," ",gitaddress,sep="")
+    system(bashcommand)
+}
+    \end{lstlisting}
+    \begin{itemize}
+        \item \texttt{1:8} creates a vector that \ldots 
+        \item \texttt{X = 1} assigns 1 to X 
+        \item \texttt{X <- 1} also assigns 1 to X
+        \item lots of things are done through function 
+        \item \texttt{paste} and \texttt{system} are functions that \ldots 
+        \item functions has none or more arguments 
+        \item arguments are implicitly ordered but the order can be overridden
+    \end{itemize}
+    \begin{lstlisting}
+system(`ls -ld .*')
+system(`cat .Rprofile')
+system(`cat .bashrc')
+system(`cat .gitignore')
+system(`cat .vimrc')
+    \end{lstlisting}
+    \begin{itemize}
+        \item .xxx files are hidden
+        \item ls -ld .* show the hidden files
+        \item .Rprofile set up your R behavior
+        \item .bashrc set up your bash behavior
+        \item .gitignore set up your git behavior 
+        \item .vimrc set up you vim behavior
+        \item these files are equivalent to Preference part of your GUI
+            software
+    \end{itemize}
+\end{frame}
 
-\section{Vim}
+
+
+
+\section{Vim for efficient editing}
 \begin{frame}
-    \frametitle{Vim}
+    \frametitle{FAQ}
+    \begin{itemize}
+        \item How to start vim? 
+        \item How to quite vim?
+        \item 
+    \end{itemize}
+\end{frame}<++>
+\begin{frame}
+    \frametitle{Vim for efficient editing}
     \begin{block}
         {Vim is a \emph{highly customizable} text editor}
     \vskip0.1in
@@ -504,7 +518,7 @@ system('R CMD install MYPAC')
 \end{frame}
 
 \begin{frame}
-    \frametitle{Vim}
+    \frametitle{Vim for efficient editing}
     \begin{itemize}
         \item Download \& Install GVim or MacVim
         \item Download \& Install tetris.vim
@@ -515,12 +529,46 @@ system('R CMD install MYPAC')
 \end{frame}
 
 \begin{frame}
-    \frametitle{Vim}
+    \frametitle{Vim for efficient editing}
     \begin{figure}
         \begin{center}
             \includegraphics[width=\textwidth]{images/vi-vim-tutorial-1.png}
         \end{center}
     \end{figure}
+\end{frame}
+
+\section{Math Modeling}
+
+\begin{frame}
+    \frametitle{A Word Problem}
+    \begin{verse} 
+        To encourage Elmer's promising tennis career, his father offers him a
+        prize if he wins (at least) two tennis sets in a row in a three-set
+        series to be played with his father and the club  champion
+        alternately: father-champion-father or champion-father-champion,
+        according to Elmer's choice. The champion is a better player than
+        Elmer's father. Which series should Elmer choose?
+    \end{verse}
+  \vskip0.1in
+  \begin{itemize}
+      \item What is that you wish to know?
+      \item unimportant, exogenous, and endogenous?
+      \item if the model fits the situation, will we be able to use it? 
+      \item Test the model
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[allowframebreaks]
+    \frametitle{Arguments from Scale}
+    \begin{block} {Cost of Packing}
+
+    \end{block}
+    \begin{block}{Speed of Racing Shells}
+        
+    \end{block}
+    \begin{block}{Size Effect in Animal}
+        
+    \end{block}
 \end{frame}
 
 
