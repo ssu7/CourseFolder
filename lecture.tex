@@ -121,6 +121,27 @@ Dr.~N.~H.~Lee \\
 \end{center}
 \end{frame}
 
+\begin{frame}
+    \frametitle{Quiz}
+    \begin{itemize}
+        \item Create a github repository with your favorite quote as a text
+            file \texttt{main.txt},
+        \item Post your github location in the designated Discussion forum 
+            by creating a thread just for yourself,
+        \item Collect all of your classmates' quote only using git,
+        \item You should have at least four commits, each adding new materials
+            to the file \texttt{main.txt},
+        \item You have twenty minutes to complete the quiz.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{FAQ}
+    \begin{itemize}
+        \item How to start Vim? 
+        \item How to quit Vim?
+    \end{itemize}
+\end{frame}
 
 
 
@@ -135,7 +156,7 @@ Dr.~N.~H.~Lee \\
     \begin{center}
         \includegraphics[width=<++>\textwidth]{<++>}
     \end{center}
-\end{figure}<++>
+\end{figure}
     \end{lstlisting}
 \end{frame}
 
@@ -229,103 +250,6 @@ git://github.com/nhlee/550400.stanza8.git
 %        \end{center}
 %    \end{figure}
 %\end{frame}
-
-\section{Causality \& Spurious Correlation}
-
-\begin{frame}[allowframebreaks,fragile]
-    \frametitle{Spurious Causality}
-
-    \begin{lstlisting}
-cbe.loc<-'http://www.massey.ac.nz/~pscowper/ts/cbe.dat';
-cbe <- read.table(cbe.loc,header=T);
-plot(cbe[,1],cbe[,3]);
-    \end{lstlisting}
-
-    \begin{lstlisting}
-set.seed(10);
-x <- rnorm(100);
-y <- rnorm(100);
-for(i in 2:100) {
-    x[i] <- x[i-1] + rnorm(1);
-    y[i] <- y[i-1] + rnorm(1);
-}
-plot(x,y);
-    \end{lstlisting}
-    \vskip0.5in
-
-    \begin{lstlisting}
-x <- y <- mu <- rep(0,1000);
-for(i in 2:1000) mu[i] <- mu[i-1] + rnorm(1);
-x <- mu + rnorm(1000);
-y <- mu + rnorm(1000);
-
-xrate.loc <-'http://www.massey.ac.nz/~pscowper/ts/us_rates.dat';
-xrates <- read.table(xrate.loc,header=T);
-plot(xrates$UK,xrates$EU,pch=4);
-    \end{lstlisting}
-    \vskip0.5in
-    Then, how to detect the underlying factors? 
-    \begin{lstlisting}
-require(tseries)
-adf.test(x)$p.value
-adf.test(y)$p.value
-po.test(cbind(x,y))
-
-pp.test(xrates$UK)
-pp.test(xrates$EU)
-po.test(cbind(xrates$UK,xrates$EU))
-ukeu.lm <- lm(xrates$UK ~ xrates$EU)
-ukeu.res <- resid(ukeu.lm)
-    \end{lstlisting}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Assessing Causality (527)}
-    \begin{itemize}
-        \item Consistency of association: 
-            \begin{verse}
-The association is observed in several different
-populations using different types of study design. 
-\end{verse}
-        \item Strength of association
-            \begin{verse}
-A bigger difference in outcomes between cases with and without the purported
-causal factor indicates a stronger association.
-\end{verse}
-        \item Temporal relationship
-            \begin{verse}
-The
-cause preceded the effect. A correlation between two variables measured at the
-same time gives weaker evidence than one measuring the relationship between
-changes in the supposed cause and subsequent responses in the outcome. 
-\end{verse}
-        \item Mechanism
-            \begin{verse}
-There is a plausible means by which the alleged cause could affect
-the outcome.
-\end{verse}
-    \end{itemize}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Writing about Causality (549)}
-    \begin{block}{Vocab. Issues}
-        \begin{verse}
-           Carefully select the words you use to describe associations: verbs such as "affect" or "cause" and nouns such as "consequences" or "effects" all imply causality. "Correlated" or "associated" do not.
-        \end{verse}
-    \end{block}
-   
-    \begin{block}{Limits of Study Design}
-        \begin{verse}
-            \ldots it is much more difficult for one study to simultaneously
-            show that all for criteria \emph{are} true.  \ldots For study
-            designs that do not allow a cause-effect pattern to be tested
-            well, point out those weaknesses and their implications for
-            inferring causality; \ldots
-        \end{verse}
-    \end{block}
-    
-\end{frame}
 
 
 \section{\LaTeX}
@@ -449,7 +373,7 @@ system('R CMD install MYPAC')
 \end{frame}
 
 \begin{frame}[fragile,allowframebreaks]
-    \frametitle{Using R to do System Admin Stuff}
+    \frametitle{Using R to do Bash Stuff}
     \begin{lstlisting}
 for(itr in 1:8) {
     stanzaname = paste("stanza",itr,sep="")
@@ -493,14 +417,6 @@ system(`cat .vimrc')
 
 \section{Vim for efficient editing}
 \begin{frame}
-    \frametitle{FAQ}
-    \begin{itemize}
-        \item How to start vim? 
-        \item How to quite vim?
-        \item 
-    \end{itemize}
-\end{frame}<++>
-\begin{frame}
     \frametitle{Vim for efficient editing}
     \begin{block}
         {Vim is a \emph{highly customizable} text editor}
@@ -537,7 +453,85 @@ system(`cat .vimrc')
     \end{figure}
 \end{frame}
 
-\section{Math Modeling}
+\section{Causality \& Spurious Correlation \& Math Modeling}
+
+\begin{frame}
+    \frametitle{Assessing Causality (WMA, 527)}
+    \begin{itemize}
+        \item Consistency of association: 
+            \begin{verse}
+The association is observed in several different
+populations using different types of study design. 
+\end{verse}
+        \item Strength of association
+            \begin{verse}
+A bigger difference in outcomes between cases with and without the purported
+causal factor indicates a stronger association.
+\end{verse}
+        \item Temporal relationship
+            \begin{verse}
+The
+cause preceded the effect. A correlation between two variables measured at the
+same time gives weaker evidence than one measuring the relationship between
+changes in the supposed cause and subsequent responses in the outcome. 
+\end{verse}
+        \item Mechanism
+            \begin{verse}
+There is a plausible means by which the alleged cause could affect
+the outcome.
+\end{verse}
+    \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}[allowframebreaks,fragile]
+    \frametitle{Spurious Causality}
+
+    \begin{lstlisting}
+cbe.loc<-'http://www.massey.ac.nz/~pscowper/ts/cbe.dat';
+cbe <- read.table(cbe.loc,header=T);
+plot(cbe[,1],cbe[,3]);
+    \end{lstlisting}
+
+    \begin{lstlisting}
+set.seed(10);
+x <- rnorm(100);
+y <- rnorm(100);
+for(i in 2:100) {
+    x[i] <- x[i-1] + rnorm(1);
+    y[i] <- y[i-1] + rnorm(1);
+}
+plot(x,y);
+    \end{lstlisting}
+    \vskip0.5in
+
+    \begin{lstlisting}
+x <- y <- mu <- rep(0,1000);
+for(i in 2:1000) mu[i] <- mu[i-1] + rnorm(1);
+x <- mu + rnorm(1000);
+y <- mu + rnorm(1000);
+
+xrate.loc <-'http://www.massey.ac.nz/~pscowper/ts/us_rates.dat';
+xrates <- read.table(xrate.loc,header=T);
+plot(xrates$UK,xrates$EU,pch=4);
+    \end{lstlisting}
+    \vskip0.5in
+    Then, how to detect the underlying factors? 
+    \begin{lstlisting}
+require(tseries)
+adf.test(x)$p.value
+adf.test(y)$p.value
+po.test(cbind(x,y))
+
+pp.test(xrates$UK)
+pp.test(xrates$EU)
+po.test(cbind(xrates$UK,xrates$EU))
+ukeu.lm <- lm(xrates$UK ~ xrates$EU)
+ukeu.res <- resid(ukeu.lm)
+    \end{lstlisting}
+\end{frame}
+
 
 \begin{frame}
     \frametitle{A Word Problem}
@@ -558,18 +552,38 @@ system(`cat .vimrc')
   \end{itemize}
 \end{frame}
 
-\begin{frame}[allowframebreaks]
-    \frametitle{Arguments from Scale}
-    \begin{block} {Cost of Packing}
+%\begin{frame}
+%    \frametitle{Writing about Causality (549)}
+%    \begin{block}{Vocab. Issues}
+%        \begin{verse}
+%           Carefully select the words you use to describe associations: verbs such as "affect" or "cause" and nouns such as "consequences" or "effects" all imply causality. "Correlated" or "associated" do not.
+%        \end{verse}
+%    \end{block}
+%   
+%    \begin{block}{Limits of Study Design}
+%        \begin{verse}
+%            \ldots it is much more difficult for one study to simultaneously
+%            show that all for criteria \emph{are} true.  \ldots For study
+%            designs that do not allow a cause-effect pattern to be tested
+%            well, point out those weaknesses and their implications for
+%            inferring causality; \ldots
+%        \end{verse}
+%    \end{block}
+%    
+%\end{frame}
 
-    \end{block}
-    \begin{block}{Speed of Racing Shells}
-        
-    \end{block}
-    \begin{block}{Size Effect in Animal}
-        
-    \end{block}
-\end{frame}
+%\begin{frame}[allowframebreaks]
+%    \frametitle{Arguments from Scale}
+%    \begin{block} {Cost of Packing}
+%
+%    \end{block}
+%    \begin{block}{Speed of Racing Shells}
+%        
+%    \end{block}
+%    \begin{block}{Size Effect in Animal}
+%        
+%    \end{block}
+%\end{frame}
 
 
 %\input{Aclassinfo.tex}
