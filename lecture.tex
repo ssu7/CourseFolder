@@ -477,14 +477,27 @@ dev.off()
 But, this requires the following in the preamble portion 
 of your tex file:
 \begin{verbatim}
-\usepackage{listings}
-\lstset{
-basicstyle=\footnotesize\ttfamily,
-numbers=left,
-frame=bottomline,
-framextopmargin=50pt,
-}
+    \usepackage{listings}
+    \lstset{
+    basicstyle=\footnotesize\ttfamily,
+    numbers=left,
+    frame=bottomline,
+    framextopmargin=50pt,
+    }
 \end{verbatim}
+You will also need \texttt{fragile} option for your frame:
+\begin{verbatim}
+    \begin{frame}[fragile]
+        \frametitle{hello world}
+         \begin{lstlisting}
+    x = rnorm(100)
+         \end{lstlisting}
+    \end{frame}
+\end{verbatim}
+\end{frame}
+
+\begin{frame}
+    \frametitle{\LaTeX\ FAQ}
 Where to get more help:
 \begin{center}
     \href{http://en.wikibooks.org/wiki/LaTeX/Presentations}{
@@ -494,24 +507,9 @@ Where to get more help:
 
 %\section{R}
 
+
 \begin{frame}[fragile]
     \frametitle{R FAQ}
-    {How to do software documentation (via R)}
-     \begin{lstlisting}
-myfun <- function(x) {x^2} 
-package.skeleton(name='MYPAC', 
-                list='myfun',  
-                path='~/')
-#Do the documentation
-system('R CMD check ~/MYPAC')
-system('R CMD build ~/MYPAC')
-system('R CMD install MYPAC')
-     \end{lstlisting}
-\end{frame}
-
-\begin{frame}[fragile,allowframebreaks]
-    \frametitle{R FAQ}
-    {Using R to do Bash Stuff}
     \begin{lstlisting}
 for(itr in 1:8) {
     stanzaname = paste("stanza",itr,sep="")
@@ -531,6 +529,10 @@ for(itr in 1:8) {
         \item functions has none or more arguments 
         \item arguments are implicitly ordered but the order can be overridden
     \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{R FAQ}
     \begin{lstlisting}
 system(`ls -ld .*')
 system(`cat .Rprofile')
@@ -550,6 +552,20 @@ system(`cat .vimrc')
     \end{itemize}
 \end{frame}
 
+\begin{frame}[fragile]
+    \frametitle{R FAQ}
+    {How to do software documentation (via R)}
+     \begin{lstlisting}
+myfun <- function(x) {x^2} 
+package.skeleton(name='MYPAC', 
+                list='myfun',  
+                path='~/')
+#Do the documentation
+system('R CMD check ~/MYPAC')
+system('R CMD build ~/MYPAC')
+system('R CMD install MYPAC')
+     \end{lstlisting}
+\end{frame}
 
 
 
@@ -670,6 +686,28 @@ ukeu.res <- resid(ukeu.lm)
     \end{block}
 \end{frame}
 
+\begin{frame}
+    \frametitle{Hypothesis Test}
+    \begin{block}{\texttt{adf.test} \& \texttt{pp.test}}
+        \begin{itemize}
+            \item the null is that the time series has the stochastic trend
+            \item the alt is that the time series is stationary
+        \end{itemize}
+    \end{block}
+    \begin{block}{\texttt{po.test}}
+        \begin{itemize}
+            \item the null is that two non-stationary series are not co-integrated
+            \item the alt is that two non-stationary series are co-integrated
+        \end{itemize}
+    \end{block}
+    \begin{block}{$p$-value}
+        \begin{itemize}
+            \item a number between $0$ and $1$
+            \item near zero means \ldots
+            \item near one mean \dots
+        \end{itemize}
+    \end{block}
+\end{frame}
 
 \begin{frame}
     \frametitle{Time Series Model}
@@ -799,13 +837,23 @@ print(fittedmodel);
 \end{frame}
 
 \begin{frame}
-    \frametitle{Granger Causality}
+    \frametitle{Mechanism of Causation?}
         \begin{verse}
 The cause preceded the effect. A correlation between two variables measured at the
 same time gives weaker evidence than one measuring the relationship between
 changes in the supposed cause and subsequent responses in the outcome. 
         \end{verse}
+    \begin{block}{Granger Causality:  
+        If $\{Y_t\}$ does not improve the forecasting performance of
+        $\{Z_t\}$, then $\{Y_t\}$ does not Granger cause $\{Z_t\}$.
+        }
+    \end{block}
+    \begin{block}{Exogeneity: $\{Z_t\}$ is exogenous (to $\{Y_t\}$ if it is not affected by
+        the contemporaneous value of $\{Y_t\}$
+        }
+    \end{block}
 \end{frame}
+
 
 %\begin{frame}
 %    \frametitle{A Word Problem}
