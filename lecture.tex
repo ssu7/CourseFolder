@@ -227,6 +227,25 @@ Dr.~N.~H.~Lee \\
     \end{block}
 \end{frame}
 
+\begin{frame}
+    \frametitle{Cross Sectional Study Vs.\ Longitudinal Study}
+    \begin{figure}
+        \centering
+            \href{http://www.wired.com/magazine/2010/11/ff_311_new_york/all/}{ \includegraphics[scale=0.3]{images/311callvolume.png}}
+            \caption{There were 34,522 complaints called in to 311 between September 8 and September 15, 2010. Here are the most common, plotted by time of day.}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Can Riots Be Predicted?}
+    \begin{figure}
+        \caption{A Tunisian protester holds a baguette while taking to riot police in January 2011}
+        \begin{center}
+            \href{http://www.npr.org/blogs/thesalt/2012/09/20/161501075/high-food-prices-forcast-more-global-riots-ahead-researchers-say}{\includegraphics[width=\textwidth]{images/food_riot.jpg}}
+        \end{center}  
+    \end{figure}
+\end{frame}
+
 %\begin{frame}
 %    \frametitle{Commit? Add? What is the difference?}
 %    \begin{block}{An imperfect analogy}
@@ -772,6 +791,25 @@ ukeu.res <- resid(ukeu.lm)
     \end{block}
 \end{frame}
 
+
+\begin{frame}
+    \frametitle{Mechanism of Causation?}
+        \begin{verse}
+The cause preceded the effect. A correlation between two variables measured at the
+same time gives weaker evidence than one measuring the relationship between
+changes in the supposed cause and subsequent responses in the outcome. 
+        \end{verse}
+    \begin{block}{Granger Causality:  
+        If $\{Y_t\}$ does not improve the forecasting performance of
+        $\{Z_t\}$, then $\{Y_t\}$ does not Granger cause $\{Z_t\}$.
+        }
+    \end{block}
+    \begin{block}{Exogeneity: $\{Z_t\}$ is exogenous (to $\{Y_t\}$ if it is not affected by
+        the contemporaneous value of $\{Y_t\}$
+        }
+    \end{block}
+\end{frame}
+
 \begin{frame}
     \frametitle{Time Series Model}
     \begin{block}{VAR($p$) model:}
@@ -834,24 +872,6 @@ print(fittedmodel);
     \end{itemize}
 \end{block}
 
-\end{frame}
-
-\begin{frame}
-    \frametitle{Mechanism of Causation?}
-        \begin{verse}
-The cause preceded the effect. A correlation between two variables measured at the
-same time gives weaker evidence than one measuring the relationship between
-changes in the supposed cause and subsequent responses in the outcome. 
-        \end{verse}
-    \begin{block}{Granger Causality:  
-        If $\{Y_t\}$ does not improve the forecasting performance of
-        $\{Z_t\}$, then $\{Y_t\}$ does not Granger cause $\{Z_t\}$.
-        }
-    \end{block}
-    \begin{block}{Exogeneity: $\{Z_t\}$ is exogenous (to $\{Y_t\}$ if it is not affected by
-        the contemporaneous value of $\{Y_t\}$
-        }
-    \end{block}
 \end{frame}
 
 
