@@ -1,3 +1,6 @@
+*.tex~
+.#*
+\#*\#
 note2ta*.tex
 *.rel
 *.aux

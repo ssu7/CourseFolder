@@ -1,0 +1,222 @@
+
+\documentclass[12pt]{article}
+\usepackage{listings}
+\usepackage[colorlinks=true,pagebackref,linkcolor=blue]{hyperref}
+\textwidth=7in
+\textheight=9.5in
+\topmargin=-1in
+\headheight=0in
+\headsep=.5in
+\hoffset  -.85in
+
+\lstset{
+basicstyle=\footnotesize\ttfamily,
+language=bash,
+upquote=true,
+breakatwhitespace=true,
+columns=fullflexible,
+keepspaces,
+%numbers=none,
+tabsize=3,
+frame=blrt,
+framextopmargin=5pt,
+showstringspaces=false,
+extendedchars=true
+}
+
+\pagestyle{empty}
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+\begin{document}
+
+
+
+\begin{center}
+{\bf AMS 550.400 \quad Work Statement Revision Assignment \quad  Due Date:  {Wed,
+    Oct 17}}\\
+\vskip.2in
+{\footnotesize Last Compiled on \today}
+\end{center}
+
+\setlength{\unitlength}{1in}
+
+\begin{picture}(6,.1) 
+\put(0,0) {\line(1,0){6.25}}         
+\end{picture}
+
+\renewcommand{\arraystretch}{2}
+
+
+\begin{center}
+\bf{General Turn-in Instruction} 
+\end{center}
+To complete this homework set, you are required to do the followings. 
+Your work must be typed in \LaTeX\ using the course work statement
+template.  
+The progression of your work statement revision is to be
+``recorded'' by making a git folder specifically for this revision
+set. The burden of proof is on you, and if your git commit history
+is sparse, then you may be liable for a penalty.  
+A paper copy of the PDF output of your \LaTeX\ file is 
+to be submitted to your instructor in class on the due date.
+The \emph{original} marked copy of your first draft \emph{must} be
+attached at the end of your \emph{final} draft.
+Should you want to keep the marked copy, please make a photocopy 
+of the original marked draft for your reference.  
+\emph{After} submitting the paper copy, but \emph{before} the end of
+the due date, you will upload your work to your github by making a remote repository
+specifically for the homework, and post the link to the repository 
+at the designated \emph{Discussion} forum in Blackboard by making 
+a thread just for you.  The repository name in your github should be
+\texttt{550400.workstatement.final} and the discussion forum thread should
+be named \texttt{YourFirstNameMiddleInitialLastName}, e.g.,
+\texttt{BaracHObama} and \texttt{WillardMRommey}. 
+You have till the end of the due date to finalize your github repository.  
+However, any commit made after the class time of the due date will be 
+inadmissible. \emph{Your attention to details in following this instruction will be 
+critical, and if not followed exactly at the time of collection, the
+homework set may be graded at $90\%$ of the full score}.
+
+\vskip.25in
+
+\begin{center}
+{\bf Checklist for Revision}
+\end{center}
+
+\begin{itemize}
+\item Make sure that your \emph{exogoneous} and \emph{endogenous}
+variables are introduced in your \emph{Problem Statement} section.  Do not refer anything
+exogenous and endogenous, but one who knows
+those technical words, \emph{should be able to} pick them out 
+by reading \emph{Problem Statement} section.   See Chapter $1$ of
+\cite{IMM1978} for review of these terminologies.  
+\item Give appropriate credits to the publications that you are
+  relying on.  Use the BibTeX.  For examples of a bibtex entry, see
+  the file \texttt{biblioWS.bib} and for necessary \LaTeX\ codes needed
+  in your workstatement \LaTeX\ file, see \texttt{workstatement.tex}
+  in the course repository.  
+\begin{center}
+\url{http://en.wikibooks.org/wiki/LaTeX/Bibliography_Management}
+\end{center}
+\item In your \emph{Deliverable} section, if your project needs
+  data/required assumptions/equipments  from your sponsoring
+  organization, then make sure that you specify  the due date for
+  the sponsor to deliver them, and specify your contingency plan
+  should they fail to meet the deadline.
+\item Do not leave any technical term unexplained.  For the
+  guideline, see the text between Page $20$ and Page $25$ in \cite{WMA2005}.  
+\item Explain your data and (proposed) method in \emph{Approach}
+  section. For the guideline, see Chapter $12$ in \cite{WMA2005}.  
+\item For each figure or table in the work statement, make sure to
+  have a caption that address all four Ws (i.e., Who, What, When
+  and Where).   See the text between Page 13 and page 15 in Chapter 2
+  of \cite{WMA2005}.  
+\item Do not be colloquial.  Assume that your audience is a mixture of
+  people who are statistically trained readers and a mixture of people
+  who are interested primarily in the answers
+  rather than the technical details.  For some guideline, see the text
+  between Page 380 and Page 385 in Chapter 16 of \cite{WMA2005}.
+\end{itemize}
+
+\vskip.25in
+
+\begin{center}
+{\bf Summary of Lectures\footnote{The most of these materials are  from \cite{RIPS2012}.} }
+\end{center}
+\paragraph{Introduction} 
+Your \emph{Work Statement} is a key document that sets forth your
+understanding of your research project at the start of the consulation
+work, and it is important that you prepare it well. The initial draft will be
+written by your team, then negotiated (and possibly modified by you in
+negotiation) with your \emph{sponsor}\footnote{The term sponsor in
+  this document refers to either your sponsoring organization or a
+  person empowered to make agreements on behalf of your sponsoring
+  organization, depending on context. Be sure to ascertain who can
+  serve in that role.}.
+When you have completed your Work
+Statement in its final form and submitted it to your sponsor, it may
+be negotiated and modified. But once agreed upon, your Work Statement
+will serve as the foundation for your project.
+
+But we all know that research is unpredictable, so you will want to
+allow for contingency and be reasonable in your negotiation. This note
+describes the content and structure of a Work Statement,
+and offers suggestions for preparing the Work Statement and discussing 
+it with your sponsor.
+
+\paragraph{The Work Statement}
+The Work Statement (referred to in government contracts as SOW or
+Statement of Work) will be your team's commitment to the sponsor for
+work agreed to.  In the reverse direction, it will include a statement
+of what, if anything, you will receive from the sponsor, such as
+software, data, hardware, or written materials, and it will serve as a
+commitment by the sponsor not to demand more than is agreed to.
+
+The Work Statement is an important contract between your team and the
+sponsor, so it is important to prepare well and conduct your
+negotiations carefully. Never use in your Work Statement technical
+terms that you do not understand; otherwise you may discover too late
+that you promised to do the impossible. Make sure you understand your
+Work Statement very well before signing off on it.
+
+A project Work Statement needn't be long; five to six pages would be
+long. You just need to spell out what your team agrees to do and, in
+turn, what you need to receive from the sponsor and when you need to
+receive it, in order to get the work done.
+
+Usually, these will include things like the following. 
+\begin{itemize}
+\item Problem statement
+\item Background
+\item Goal of your project (major direction you see the work aimed at,
+  not necessarily what you bid to do)
+\item Objectives (specific aims of your project, and schedule of
+  results you expect to achieve)
+\item Tasks (the things you will do to achieve your objectives) and a list of items
+required from your sponsor in order to perform your tasks
+\item Milestones (major checkpoints your team will use to stay on track)
+\item Deliverables (specific work products you will deliver to the sponsor)
+\item Schedule (dates for completing milestones and tasks and for deliverables)
+\end{itemize}
+Your Work Statement need not use the terms introduced above, but it
+should address the major points they refer to.  And your Work Statement
+need not be as fine-grained as what is implied by the terminology. 
+For example, your team might set internal milestones as a
+way of maintaining pace and coordination but not include them, or
+include fewer of them, in the Work Statement. The Work Statement is
+like a recipe -- getting the right ingredients and the right amount of
+each ingredient is an art.
+
+If your project does require the sponsor to provide something of
+importance, be sure you include it in your Work Statement and specify
+a last acceptable date for delivery of the material and contingency
+plans that will allow you to proceed in the event of a failed
+delivery. Note that this can include, for example, consultation to be
+provided by the sponsor on the use of special equipment or software.
+
+If your sponsor demands more than you think you can commit to doing,
+try using phrases like, ``time permitting, we will attempt to do X'', or
+``if our research leads successfully to A, we will then proceed to
+investigating B.'' Statements like this show that you are aware of
+where your sponsor wants to go and that you are committed to trying to
+get there, but it also serves as fair notice that you believe the
+sponsor may be asking too much to insist on B.
+
+Your Work Statement is not just for experts. It will be of interest to
+several parties of differing backgrounds and knowledge, not only to
+your sponsor’s mentor and yourselves. For example, the manager(s) who
+funded your project will need to understand what they paid for and be
+able to justify the expenditure to their management. If your work is
+successful and generates interest in im`aplementing the results by the
+sponsor or in continuing the line of research, managers will be tapped
+again for funds, and a later project team, who are not necessarily
+experts at the outset, will need to use your documentation to come up
+to speed. A clearly written Work Statement, along with your final
+report, can be used by them as their starting points.
+
+\bibliographystyle{plain}
+\nocite{*}
+\bibliography{biblioWS}
+
+\end{document}
